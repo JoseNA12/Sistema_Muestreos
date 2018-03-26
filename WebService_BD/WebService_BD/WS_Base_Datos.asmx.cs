@@ -26,15 +26,18 @@ namespace WebService_BD
         }
 
         [WebMethod]
-        public DataSet GetData()
+        public DataSet GetData() // Funcion que devuelve un valor/respuesta proveniente de la BD
         {
             //Ingresar a la BD
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source =JoseNA;" +
-                "Initial Catalog=SistemaMuestreos;" +
+            SqlConnection conn = new SqlConnection(); 
+            conn.ConnectionString =
+                "Data Source =JOSENA\\SQLEXPRESS;" + // Nombre de usuario de SQL Server
+                "Initial Catalog=SistemaMuestreos;" + // Nombre de la base de datos
                 //"User id=SQLEXPRESS;" +
                 //"Password=3;";
                 "Integrated Security=True;"; //Sin contraseña en la bd
+
+            // Peticion que queremos hacer
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM USUARIO", conn);
             DataSet ds = new DataSet();
             da.Fill(ds);
