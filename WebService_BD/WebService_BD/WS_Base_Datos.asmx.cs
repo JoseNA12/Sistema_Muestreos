@@ -28,6 +28,7 @@ namespace WebService_BD
         [WebMethod]
         public DataSet GetData()
         {
+            //Ingresar a la BD
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = "Data Source =JoseNA;" +
                 "Initial Catalog=SistemaMuestreos;" +
