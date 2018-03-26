@@ -14,12 +14,22 @@
 </head>
 <body style="height: 414px; width: 697px">
     <form id="form1" runat="server">
-        <asp:Login ID="Login1" runat="server" BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" Height="367px" Width="427px">
-            <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
-            <LoginButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284775" />
-            <TextBoxStyle Font-Size="0.8em" />
-            <TitleTextStyle BackColor="#5D7B9D" Font-Bold="True" Font-Size="0.9em" ForeColor="White" />
-        </asp:Login>
+        <p>
+            Iniciar Sesion</p>
+        <p>
+            Nombre de usuario:
+        </p>
+        <p>
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            Contraseña:</p>
+        <p>
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            <asp:Button ID="Button1" runat="server" Text="Ingresar" />
+        </p>
     </form>
 </body>
 </html>
