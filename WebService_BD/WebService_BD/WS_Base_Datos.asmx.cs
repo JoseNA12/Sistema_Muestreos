@@ -29,8 +29,12 @@ namespace WebService_BD
         public DataSet GetData()
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source =NOMBRE_SERVIDOR; Intial Catalog=NOMBRE_BD; Integrated Security=True;";
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM NOMBRE_TABLA", conn);
+            conn.ConnectionString = "Data Source =JoseNA;" +
+                "Initial Catalog=SistemaMuestreos;" +
+                //"User id=SQLEXPRESS;" +
+                //"Password=3;";
+                "Integrated Security=True;"; //Sin contraseña en la bd
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM USUARIO", conn);
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;

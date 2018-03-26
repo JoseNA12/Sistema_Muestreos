@@ -14,8 +14,8 @@ namespace Sistema_Muestreos
         {
             ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
             DataSet ds = WS.GetData();
-            
-            
+
+            TextBox_NombreUsuario.Text = ds.Tables[0].TableName;
         }
     }
 }

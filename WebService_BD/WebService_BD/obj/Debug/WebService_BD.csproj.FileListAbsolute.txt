@@ -7,3 +7,12 @@ C:\Users\jose_\Desktop\Sistema_Muestreos\WebService_BD\WebService_BD\obj\Debug\W
 C:\Users\jose_\Desktop\Sistema_Muestreos\WebService_BD\WebService_BD\obj\Debug\WebService_BD.csproj.CoreCompileInputs.cache
 C:\Users\jose_\Desktop\Sistema_Muestreos\WebService_BD\WebService_BD\obj\Debug\WebService_BD.dll
 C:\Users\jose_\Desktop\Sistema_Muestreos\WebService_BD\WebService_BD\obj\Debug\WebService_BD.pdb
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\bin\WebService_BD.dll.config
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\bin\WebService_BD.dll
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\bin\WebService_BD.pdb
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\obj\Debug\WebService_BD.csprojResolveAssemblyReference.cache
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\obj\Debug\WebService_BD.csproj.CoreCompileInputs.cache
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\obj\Debug\WebService_BD.dll
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\obj\Debug\WebService_BD.pdb
