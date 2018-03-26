@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,9 +12,10 @@ namespace Sistema_Muestreos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
+            DataSet ds = WS.GetData();
+            
+            
         }
-
-
     }
 }

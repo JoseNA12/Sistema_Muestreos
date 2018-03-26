@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService_BD", "WebService_BD\WebService_BD.csproj", "{25773B5F-2509-4216-9678-079E4A479A8E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema_Muestreos", "Sistema_Muestreos\Sistema_Muestreos.csproj", "{309F1CA0-6E8A-47B4-BAB3-42D96ACA0FB6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{25773B5F-2509-4216-9678-079E4A479A8E} = {25773B5F-2509-4216-9678-079E4A479A8E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -8,28 +8,38 @@
     <title></title>
     <style type="text/css">
         #form1 {
-            height: 395px;
+            height: 406px;
+            width: 516px;
         }
     </style>
 </head>
-<body style="height: 414px; width: 697px">
+<body style="height: 409px; width: 516px">
     <form id="form1" runat="server">
-        <p>
-            Iniciar Sesion</p>
-        <p>
-            Nombre de usuario:
-        </p>
-        <p>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        </p>
-        <p>
-            Contraseña:</p>
-        <p>
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-        </p>
-        <p>
-            <asp:Button ID="Button1" runat="server" Text="Ingresar" />
-        </p>
+        <asp:Panel ID="Panel1" runat="server" BackColor="#3399FF" Height="410px" Width="517px">
+            <asp:Panel ID="Panel2" runat="server" BackColor="White" Height="410px" HorizontalAlign="Center" style="margin-left: 128px; margin-right: 1px; margin-top: 0px; margin-bottom: 1px" Width="268px">
+                <br />
+                <br />
+                <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Calibri" Font-Size="X-Large" Text="Iniciar Sesión"></asp:Label>
+                <br />
+                <br />
+                <br />
+                <br />
+                &nbsp;<asp:Label ID="Label2" runat="server" Font-Names="Calibri" Font-Size="Medium" Text="Nombre de usuario:"></asp:Label>
+                <br />
+                <br />
+                <asp:TextBox ID="TextBox_NombreUsuario" runat="server" Font-Names="Calibri" Font-Size="Medium" style="margin-left: 0px"></asp:TextBox>
+                <br />
+                <br />
+                <asp:Label ID="Label3" runat="server" Font-Names="Calibri" Font-Size="Medium" Text="Contraseña:"></asp:Label>
+                <br />
+                <br />
+                <asp:TextBox ID="TextBox_Contrasenia" runat="server" Font-Names="Calibri" Font-Size="Medium" TextMode="Password"></asp:TextBox>
+                <br />
+                <br />
+                <br />
+                <asp:Button ID="button_Ingresar" runat="server" BackColor="#0099FF" Font-Names="Calibri" Font-Size="Medium" ForeColor="White" Text="Ingresar" Width="163px" />
+            </asp:Panel>
+        </asp:Panel>
     </form>
 </body>
 </html>

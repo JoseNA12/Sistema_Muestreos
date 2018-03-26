@@ -7,3 +7,12 @@ C:\Users\jose_\Desktop\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\obj\Deb
 C:\Users\jose_\Desktop\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.csproj.CoreCompileInputs.cache
 C:\Users\jose_\Desktop\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.dll
 C:\Users\jose_\Desktop\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.pdb
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\bin\Sistema_Muestreos.dll.config
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\bin\Sistema_Muestreos.dll
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\bin\Sistema_Muestreos.pdb
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.csprojResolveAssemblyReference.cache
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.csproj.CoreCompileInputs.cache
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.dll
+C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.pdb
