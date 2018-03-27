@@ -8,18 +8,19 @@
     <title>Iniciar Sesión</title>
     <style type="text/css">
         #form1 {
-            height: 406px;
-            width: 517px;
+            height: 492px;
+            width: 525px;
             margin-bottom: 0px;
         }
     </style>
 </head>
-<body style="height: 409px; width: 516px; background-image: url('Backgrounds.jpg'); position:center; margin-bottom:auto; margin-top:auto; margin-left:auto; margin-right:auto;">
+<body style="margin: auto; height: 489px; width: 515px; background-image: url('Backgrounds.jpg'); position:center; ">
     <form id="form1" runat="server" autocomplete="on">
         <div style=" margin-left: auto; margin-right:auto;">
-            <asp:Panel ID="Panel1" runat="server" Height="410px" Width="517px" HorizontalAlign="Center">
-                <asp:Panel ID="Panel2" runat="server" BackColor="White" Height="410px" HorizontalAlign="Center" style="margin-left: 128px; margin-right: 1px; margin-top: 0px; margin-bottom: 1px" Width="268px">
+            <asp:Panel ID="Panel1" runat="server" Height="483px" Width="518px" HorizontalAlign="Center">
+                <asp:Panel ID="Panel2" runat="server" BackColor="White" Height="497px" HorizontalAlign="Center" style="margin-left: 128px; margin-right: 1px; margin-top: 0px; margin-bottom: 1px" Width="268px">
                     <br />
+                    <asp:Image ID="Image1" runat="server" Height="130px" ImageUrl="~/Pantallas/Img/login.png" Width="130px" />
                     <br />
                     <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Microsoft Sans Serif" Font-Size="Large" Text="Iniciar Sesión"></asp:Label>
                     <br />
@@ -39,7 +40,7 @@
                     <br />
                     <br />
                     <br />
-                    <asp:Button ID="button_Ingresar" runat="server" BackColor="#0099FF" Font-Names="Calibri" Font-Size="Medium" ForeColor="White" Text="Ingresar" Width="163px" OnClick="button_Ingresar_Click" />
+                    <asp:Button ID="button_Ingresar" runat="server" BackColor="#0066CC" Font-Names="Calibri" Font-Size="Large" ForeColor="White" Text="Ingresar" Width="163px" OnClick="button_Ingresar_Click" Height="39px" />
                     <br />
                     <br />
                 </asp:Panel>

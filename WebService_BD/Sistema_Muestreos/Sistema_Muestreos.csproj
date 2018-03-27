@@ -72,10 +72,11 @@
     <None Include="packages.config" />
     <Content Include="Pantallas\Actividades.aspx" />
     <Content Include="Pantallas\AgregarColaborador.aspx" />
-    <Content Include="Pantallas\Backgrounds.jpg" />
+    <Content Include="Pantallas\Img\Backgrounds.jpg" />
     <Content Include="Pantallas\Colaboradores.aspx" />
     <Content Include="Pantallas\CrearActividad.aspx" />
     <Content Include="Pantallas\CrearUsuario.aspx" />
+    <Content Include="Pantallas\Img\login.png" />
     <Content Include="Pantallas\MainAdministrador.aspx" />
     <Content Include="Pantallas\ModificarActividad.aspx" />
     <Content Include="Pantallas\MuestreoPreliminar2.aspx" />
