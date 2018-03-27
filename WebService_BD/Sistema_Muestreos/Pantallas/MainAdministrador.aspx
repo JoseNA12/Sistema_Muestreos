@@ -7,9 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<body style="height: 411px; width: 579px">
+<body style="height: 411px; width: 579px; background-image: url('Backgrounds.jpg'); position:center; margin-bottom:auto; margin-top:auto; margin-left:auto; margin-right:auto;">
     <form id="form1" runat="server">
-        <div style="height: 414px; width: 583px; background-color: #3399FF;">
+        <div style="height: 414px; width: 583px;">
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Agregar usuario" Width="178px" />

@@ -7,9 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<body>
+<body style="background-image: url('Backgrounds.jpg'); width: 425px; position:center; margin-bottom:auto; margin-top:auto; margin-left:auto; margin-right:auto;">
     <form id="form1" runat="server">
-        <div style="height: 421px; width: 439px; background-color: #3399FF;">
+        <div style="height: 421px; width: 439px;">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label1" runat="server" Text="Crear usuario"></asp:Label>
             <br />

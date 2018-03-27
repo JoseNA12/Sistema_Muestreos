@@ -7,10 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<body>
+<body style="background-image: url('Backgrounds.jpg'); width: 580px; position:center; margin-bottom:auto; margin-top:auto; margin-left:auto; margin-right:auto;">
     <form id="form1" runat="server">
         <div style="width: 572px; height: 273px">
-            <asp:Panel ID="Panel1" runat="server" BackColor="#3399FF" Font-Size="XX-Large" Height="268px" Width="575px">
+            <asp:Panel ID="Panel1" runat="server" Font-Size="XX-Large" Height="268px" Width="575px">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Muestreo<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
