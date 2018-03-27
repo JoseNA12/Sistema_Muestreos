@@ -37,7 +37,9 @@
                 <br />
                 <br />
                 <br />
-                <asp:Button ID="button_Ingresar" runat="server" BackColor="#0099FF" Font-Names="Calibri" Font-Size="Medium" ForeColor="White" Text="Ingresar" Width="163px" />
+                <asp:Button ID="button_Ingresar" runat="server" BackColor="#0099FF" Font-Names="Calibri" Font-Size="Medium" ForeColor="White" Text="Ingresar" Width="163px" OnClick="button_Ingresar_Click" />
+                <br />
+                <br />
             </asp:Panel>
         </asp:Panel>
     </form>

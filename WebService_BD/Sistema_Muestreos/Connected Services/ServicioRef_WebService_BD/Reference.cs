@@ -16,19 +16,19 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioRef_WebService_BD.WS_Base_DatosSoap")]
     public interface WS_Base_DatosSoap {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetData_jeje", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string HelloWorld();
+        System.Data.DataSet GetData_jeje();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> HelloWorldAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetData_jeje", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetData_jejeAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetData", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerificarCredenciales", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetData();
+        System.Data.DataSet VerificarCredenciales();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetData", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetDataAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerificarCredenciales", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> VerificarCredencialesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -58,20 +58,20 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
                 base(binding, remoteAddress) {
         }
         
-        public string HelloWorld() {
-            return base.Channel.HelloWorld();
+        public System.Data.DataSet GetData_jeje() {
+            return base.Channel.GetData_jeje();
         }
         
-        public System.Threading.Tasks.Task<string> HelloWorldAsync() {
-            return base.Channel.HelloWorldAsync();
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetData_jejeAsync() {
+            return base.Channel.GetData_jejeAsync();
         }
         
-        public System.Data.DataSet GetData() {
-            return base.Channel.GetData();
+        public System.Data.DataSet VerificarCredenciales() {
+            return base.Channel.VerificarCredenciales();
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetDataAsync() {
-            return base.Channel.GetDataAsync();
+        public System.Threading.Tasks.Task<System.Data.DataSet> VerificarCredencialesAsync() {
+            return base.Channel.VerificarCredencialesAsync();
         }
     }
 }

@@ -19,29 +19,32 @@ namespace WebService_BD
     public class WS_Base_Datos : System.Web.Services.WebService
     {
 
-        [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hola a todos";
-        }
+        private string conexionInfo = 
+            "Data Source =JOSENA\\SQLEXPRESS;" + // Nombre de usuario de SQL Server
+            "Initial Catalog=SistemaMuestreos;" + // Nombre de la base de datos
+            //"User id=;" +
+            //"Password=;";
+            "Integrated Security=True;"; //Sin contraseña en la bd
 
-        [WebMethod]
-        public DataSet GetData() // Funcion que devuelve un valor/respuesta proveniente de la BD
+        private DataSet CrearPeticion(string pInstruccion)
         {
             //Ingresar a la BD
-            SqlConnection conn = new SqlConnection(); 
-            conn.ConnectionString =
-                "Data Source =JOSENA\\SQLEXPRESS;" + // Nombre de usuario de SQL Server
-                "Initial Catalog=SistemaMuestreos;" + // Nombre de la base de datos
-                //"User id=SQLEXPRESS;" +
-                //"Password=3;";
-                "Integrated Security=True;"; //Sin contraseña en la bd
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = conexionInfo;
 
             // Peticion que queremos hacer
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM USUARIO", conn);
+            SqlDataAdapter da = new SqlDataAdapter(pInstruccion, conn);
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;
+        }
+
+        [WebMethod]
+        public DataSet VerificarCredenciales(string pA) // Funcion que devuelve un valor/respuesta proveniente de la BD
+        {
+            string pNombreUsuario = "'Pepito'"; string pContrasenia = "12345";
+            return CrearPeticion("SELECT u.Nombre, u.Contraseña, u.IdTipoUsuario FROM USUARIO u " +
+                "WHERE u.Nombre = " + pNombreUsuario + " and u.Contraseña = " + pContrasenia);
         }
     }
 }
