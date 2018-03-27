@@ -70,6 +70,17 @@
   <ItemGroup>
     <None Include="Connected Services\ServicioRef_WebService_BD\WS_Base_Datos.wsdl" />
     <None Include="packages.config" />
+    <Content Include="Pantallas\Actividades\Actividades.aspx" />
+    <Content Include="Pantallas\AgregarColaborador\AgregarColaborador.aspx" />
+    <Content Include="Pantallas\Colaboradores\Colaboradores.aspx" />
+    <Content Include="Pantallas\CrearActividad\CrearActividad.aspx" />
+    <Content Include="Pantallas\CrearUsuario\CrearUsuario.aspx" />
+    <Content Include="Pantallas\MainAdministrador\MainAdministrador.aspx" />
+    <Content Include="Pantallas\ModificarActividad\ModificarActividad.aspx" />
+    <Content Include="Pantallas\MuestreoPreliminar2\MuestreoPreliminar2.aspx" />
+    <Content Include="Pantallas\MuestreoPreliminar\MuestreoPeliminar.aspx" />
+    <Content Include="Pantallas\Muestreo\Muestreo.aspx" />
+    <Content Include="Pantallas\NuevoMuestreo\NuevoMuestreo.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -86,7 +97,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="IniciarSesion.aspx" />
+    <Content Include="Pantallas\IniciarSesion\IniciarSesion.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,12 +106,89 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="IniciarSesion.aspx.cs">
+    <Compile Include="Pantallas\Actividades\Actividades.aspx.cs">
+      <DependentUpon>Actividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Actividades\Actividades.aspx.designer.cs">
+      <DependentUpon>Actividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\AgregarColaborador\AgregarColaborador.aspx.cs">
+      <DependentUpon>AgregarColaborador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\AgregarColaborador\AgregarColaborador.aspx.designer.cs">
+      <DependentUpon>AgregarColaborador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Colaboradores\Colaboradores.aspx.cs">
+      <DependentUpon>Colaboradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Colaboradores\Colaboradores.aspx.designer.cs">
+      <DependentUpon>Colaboradores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\CrearActividad\CrearActividad.aspx.cs">
+      <DependentUpon>CrearActividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\CrearActividad\CrearActividad.aspx.designer.cs">
+      <DependentUpon>CrearActividad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\CrearUsuario\CrearUsuario.aspx.cs">
+      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\CrearUsuario\CrearUsuario.aspx.designer.cs">
+      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\IniciarSesion\IniciarSesion.aspx.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IniciarSesion.aspx.designer.cs">
+    <Compile Include="Pantallas\IniciarSesion\IniciarSesion.aspx.designer.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\MainAdministrador\MainAdministrador.aspx.cs">
+      <DependentUpon>MainAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\MainAdministrador\MainAdministrador.aspx.designer.cs">
+      <DependentUpon>MainAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\ModificarActividad\ModificarActividad.aspx.cs">
+      <DependentUpon>ModificarActividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\ModificarActividad\ModificarActividad.aspx.designer.cs">
+      <DependentUpon>ModificarActividad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\MuestreoPreliminar2\MuestreoPreliminar2.aspx.cs">
+      <DependentUpon>MuestreoPreliminar2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\MuestreoPreliminar2\MuestreoPreliminar2.aspx.designer.cs">
+      <DependentUpon>MuestreoPreliminar2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\MuestreoPreliminar\MuestreoPeliminar.aspx.cs">
+      <DependentUpon>MuestreoPeliminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\MuestreoPreliminar\MuestreoPeliminar.aspx.designer.cs">
+      <DependentUpon>MuestreoPeliminar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Muestreo\Muestreo.aspx.cs">
+      <DependentUpon>Muestreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Muestreo\Muestreo.aspx.designer.cs">
+      <DependentUpon>Muestreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\NuevoMuestreo\NuevoMuestreo.aspx.cs">
+      <DependentUpon>NuevoMuestreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\NuevoMuestreo\NuevoMuestreo.aspx.designer.cs">
+      <DependentUpon>NuevoMuestreo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -110,6 +198,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServicioRef_WebService_BD\" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
