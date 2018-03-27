@@ -7,9 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<body style="background-image: url('Backgrounds.jpg'); position:center; margin-bottom:auto; margin-top:auto; margin-left:auto; margin-right:auto;">
+<body style="margin: auto; background-image: url('Backgrounds.jpg'); position:center; width: 726px;">
     <form id="form1" runat="server">
-        <div style="height: 490px; width: 753px; ">
+        <div style="height: 490px; width: 729px; ">
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label1" runat="server" Text="Actividades" Font-Names="Microsoft Sans Serif"></asp:Label>
             &nbsp;&nbsp;&nbsp;

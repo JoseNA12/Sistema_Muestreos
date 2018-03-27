@@ -29,22 +29,35 @@ namespace WebService_BD
         private DataSet CrearPeticion(string pInstruccion)
         {
             //Ingresar a la BD
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = conexionInfo;
-
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            //conn.ConnectionString = conexionInfo;
+            ///SqlCommand com = new SqlCommand("Prueba()", conn);
             // Peticion que queremos hacer
-            SqlDataAdapter da = new SqlDataAdapter(pInstruccion, conn);
+            SqlDataAdapter da = new SqlDataAdapter("spPrueba", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;
         }
 
         [WebMethod]
-        public DataSet VerificarCredenciales(string pA) // Funcion que devuelve un valor/respuesta proveniente de la BD
+        public DataSet VerificarCredenciales(string pNombreUsuario, string pContrasenia) // Funcion que devuelve un valor/respuesta proveniente de la BD
         {
-            string pNombreUsuario = "'Pepito'"; string pContrasenia = "12345";
-            return CrearPeticion("SELECT u.Nombre, u.Contraseña, u.IdTipoUsuario FROM USUARIO u " +
-                "WHERE u.Nombre = " + pNombreUsuario + " and u.Contraseña = " + pContrasenia);
+            //Ingresar a la BD
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter("spPrueba", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            da.SelectCommand.Parameters.AddWithValue("@pNombreUsuario", pNombreUsuario);
+            da.SelectCommand.Parameters.AddWithValue("@pContrasenia", pContrasenia);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
         }
     }
 }

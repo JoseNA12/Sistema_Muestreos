@@ -2,25 +2,12 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="GetData_jeje">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetData_jejeResponse">
+      <s:element name="VerificarCredenciales">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetData_jejeResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="pA" type="s:string" />
           </s:sequence>
         </s:complexType>
-      </s:element>
-      <s:element name="VerificarCredenciales">
-        <s:complexType />
       </s:element>
       <s:element name="VerificarCredencialesResponse">
         <s:complexType>
@@ -38,12 +25,6 @@
       </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="GetData_jejeSoapIn">
-    <wsdl:part name="parameters" element="tns:GetData_jeje" />
-  </wsdl:message>
-  <wsdl:message name="GetData_jejeSoapOut">
-    <wsdl:part name="parameters" element="tns:GetData_jejeResponse" />
-  </wsdl:message>
   <wsdl:message name="VerificarCredencialesSoapIn">
     <wsdl:part name="parameters" element="tns:VerificarCredenciales" />
   </wsdl:message>
@@ -51,10 +32,6 @@
     <wsdl:part name="parameters" element="tns:VerificarCredencialesResponse" />
   </wsdl:message>
   <wsdl:portType name="WS_Base_DatosSoap">
-    <wsdl:operation name="GetData_jeje">
-      <wsdl:input message="tns:GetData_jejeSoapIn" />
-      <wsdl:output message="tns:GetData_jejeSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="VerificarCredenciales">
       <wsdl:input message="tns:VerificarCredencialesSoapIn" />
       <wsdl:output message="tns:VerificarCredencialesSoapOut" />
@@ -62,15 +39,6 @@
   </wsdl:portType>
   <wsdl:binding name="WS_Base_DatosSoap" type="tns:WS_Base_DatosSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetData_jeje">
-      <soap:operation soapAction="http://tempuri.org/GetData_jeje" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="VerificarCredenciales">
       <soap:operation soapAction="http://tempuri.org/VerificarCredenciales" style="document" />
       <wsdl:input>
@@ -83,15 +51,6 @@
   </wsdl:binding>
   <wsdl:binding name="WS_Base_DatosSoap12" type="tns:WS_Base_DatosSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetData_jeje">
-      <soap12:operation soapAction="http://tempuri.org/GetData_jeje" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="VerificarCredenciales">
       <soap12:operation soapAction="http://tempuri.org/VerificarCredenciales" style="document" />
       <wsdl:input>

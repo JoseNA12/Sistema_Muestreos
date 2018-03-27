@@ -16,19 +16,12 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioRef_WebService_BD.WS_Base_DatosSoap")]
     public interface WS_Base_DatosSoap {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetData_jeje", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetData_jeje();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetData_jeje", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetData_jejeAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerificarCredenciales", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet VerificarCredenciales();
+        System.Data.DataSet VerificarCredenciales(string pA);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerificarCredenciales", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> VerificarCredencialesAsync();
+        System.Threading.Tasks.Task<System.Data.DataSet> VerificarCredencialesAsync(string pA);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -58,20 +51,12 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
                 base(binding, remoteAddress) {
         }
         
-        public System.Data.DataSet GetData_jeje() {
-            return base.Channel.GetData_jeje();
+        public System.Data.DataSet VerificarCredenciales(string pA) {
+            return base.Channel.VerificarCredenciales(pA);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetData_jejeAsync() {
-            return base.Channel.GetData_jejeAsync();
-        }
-        
-        public System.Data.DataSet VerificarCredenciales() {
-            return base.Channel.VerificarCredenciales();
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataSet> VerificarCredencialesAsync() {
-            return base.Channel.VerificarCredencialesAsync();
+        public System.Threading.Tasks.Task<System.Data.DataSet> VerificarCredencialesAsync(string pA) {
+            return base.Channel.VerificarCredencialesAsync(pA);
         }
     }
 }

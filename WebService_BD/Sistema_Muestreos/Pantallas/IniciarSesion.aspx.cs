@@ -22,22 +22,18 @@ namespace Sistema_Muestreos
         {
             if (!TextBox_NombreUsuario.Text.Equals(""))
             {
-
                 if (!TextBox_Contrasenia.Text.Equals(""))
                 {
                     ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
 
-                    /*string[] arr1 = new string[] { TextBox_NombreUsuario.Text, TextBox_Contrasenia.Text };
-                    List<string> list = new List<string>();
-                    list.Add(TextBox_NombreUsuario.Text);
-                    list.Add(TextBox_Contrasenia.Text);
+                    DataSet ds = WS.VerificarCredenciales(TextBox_NombreUsuario.Text, TextBox_Contrasenia.Text);
 
+                    DataTable firsttable = ds.Tables[0];
+                    DataRow row = firsttable.Rows[0];
 
-                    string a = "a";
-                    DataSet ds = WS.VerificarCredenciales();
+                    MessageBox(row[0].ToString());
 
-                    MessageBox(ds.Tables[0].ToString());*/
-                    Response.Redirect("Actividades.aspx");
+                    //Response.Redirect("Actividades.aspx");
                 }
                 else
                 {
