@@ -26,7 +26,7 @@ namespace WebService_BD
             //"Password=;";
             "Integrated Security=True;"; //Sin contraseña en la bd
 
-        private DataSet CrearPeticion(string pInstruccion)
+        /*private DataSet CrearPeticion(string pInstruccion)
         {
             //Ingresar a la BD
             SqlConnection conn = new SqlConnection(conexionInfo);
@@ -34,13 +34,13 @@ namespace WebService_BD
             //conn.ConnectionString = conexionInfo;
             ///SqlCommand com = new SqlCommand("Prueba()", conn);
             // Peticion que queremos hacer
-            SqlDataAdapter da = new SqlDataAdapter("spPrueba", conn);
+            SqlDataAdapter da = new SqlDataAdapter("crud_UsuarioSelect", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;
-        }
+        }*/
 
         [WebMethod]
         public DataSet VerificarCredenciales(string pNombreUsuario, string pContrasenia) // Funcion que devuelve un valor/respuesta proveniente de la BD
@@ -49,11 +49,11 @@ namespace WebService_BD
             SqlConnection conn = new SqlConnection(conexionInfo);
             conn.Open();
 
-            SqlDataAdapter da = new SqlDataAdapter("spPrueba", conn);
+            SqlDataAdapter da = new SqlDataAdapter("crud_UsuarioSelect", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
-            da.SelectCommand.Parameters.AddWithValue("@pNombreUsuario", pNombreUsuario);
-            da.SelectCommand.Parameters.AddWithValue("@pContrasenia", pContrasenia);
+            da.SelectCommand.Parameters.AddWithValue("@Usuario", pNombreUsuario);
+            da.SelectCommand.Parameters.AddWithValue("@Contraseña", pContrasenia);
 
             DataSet ds = new DataSet();
             da.Fill(ds);

@@ -24,6 +24,7 @@ namespace Sistema_Muestreos
             {
                 if (!TextBox_Contrasenia.Text.Equals(""))
                 {
+
                     ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
 
                     DataSet ds = WS.VerificarCredenciales(TextBox_NombreUsuario.Text, TextBox_Contrasenia.Text);
@@ -31,7 +32,7 @@ namespace Sistema_Muestreos
                     DataTable firsttable = ds.Tables[0];
                     DataRow row = firsttable.Rows[0];
 
-                    MessageBox(row[0].ToString());
+                    MessageBox(row[2].ToString());
 
                     //Response.Redirect("Actividades.aspx");
                 }

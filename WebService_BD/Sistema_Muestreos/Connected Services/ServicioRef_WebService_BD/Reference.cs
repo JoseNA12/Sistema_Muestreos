@@ -18,10 +18,10 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerificarCredenciales", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet VerificarCredenciales(string pA);
+        System.Data.DataSet VerificarCredenciales(string pNombreUsuario, string pContrasenia);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerificarCredenciales", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> VerificarCredencialesAsync(string pA);
+        System.Threading.Tasks.Task<System.Data.DataSet> VerificarCredencialesAsync(string pNombreUsuario, string pContrasenia);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -51,12 +51,12 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
                 base(binding, remoteAddress) {
         }
         
-        public System.Data.DataSet VerificarCredenciales(string pA) {
-            return base.Channel.VerificarCredenciales(pA);
+        public System.Data.DataSet VerificarCredenciales(string pNombreUsuario, string pContrasenia) {
+            return base.Channel.VerificarCredenciales(pNombreUsuario, pContrasenia);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> VerificarCredencialesAsync(string pA) {
-            return base.Channel.VerificarCredencialesAsync(pA);
+        public System.Threading.Tasks.Task<System.Data.DataSet> VerificarCredencialesAsync(string pNombreUsuario, string pContrasenia) {
+            return base.Channel.VerificarCredencialesAsync(pNombreUsuario, pContrasenia);
         }
     }
 }
