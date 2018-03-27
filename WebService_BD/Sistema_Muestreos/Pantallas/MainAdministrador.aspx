@@ -9,7 +9,7 @@
 </head>
 <body style="height: 411px; width: 579px">
     <form id="form1" runat="server">
-        <div style="height: 414px; width: 583px; background-color: #0066FF;">
+        <div style="height: 414px; width: 583px; background-color: #3399FF;">
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Agregar usuario" Width="178px" />

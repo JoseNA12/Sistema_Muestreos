@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div style="width: 572px; height: 273px">
-            <asp:Panel ID="Panel1" runat="server" BackColor="#0099FF" Font-Size="XX-Large" Height="268px" Width="575px">
+            <asp:Panel ID="Panel1" runat="server" BackColor="#3399FF" Font-Size="XX-Large" Height="268px" Width="575px">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Muestreo<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

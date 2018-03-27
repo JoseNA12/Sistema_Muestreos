@@ -37,7 +37,7 @@ namespace Sistema_Muestreos
                     DataSet ds = WS.VerificarCredenciales();
 
                     MessageBox(ds.Tables[0].ToString());*/
-                    Response.Redirect("EmployeeHome.aspx");
+                    Response.Redirect("Actividades.aspx");
                 }
                 else
                 {
@@ -55,5 +55,7 @@ namespace Sistema_Muestreos
             Page.Controls.Add(new LiteralControl(
              "<script language='javascript'> window.alert('" + msg.Replace("'", "\\'") + "')</script>"));
         }
+
+
     }
 }

@@ -9,7 +9,7 @@
 </head>
 <body style="height: 248px; width: 523px">
     <form id="form1" runat="server">
-        <div style="height: 248px; width: 515px; background-color: #3366FF;">
+        <div style="height: 248px; width: 515px; background-color: #3399FF;">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label1" runat="server" Text="Muestreo preliminar"></asp:Label>
             <br />

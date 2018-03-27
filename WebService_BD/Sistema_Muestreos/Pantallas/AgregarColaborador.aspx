@@ -9,10 +9,11 @@
 </head>
 <body style="height: 341px; width: 532px">
     <form id="form1" runat="server">
-        <div style="height: 342px; width: 535px; background-color: #3366FF;">
+        <div style="height: 342px; width: 535px; background-color: #3399FF">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label5" runat="server" Text="Agregar colaborador"></asp:Label>
             <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label5" runat="server" Text="Agregar colaborador"></asp:Label>
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

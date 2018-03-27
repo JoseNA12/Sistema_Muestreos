@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="height: 421px; width: 439px; background-color: #0066FF;">
+        <div style="height: 421px; width: 439px; background-color: #3399FF;">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label1" runat="server" Text="Crear usuario"></asp:Label>
             <br />
