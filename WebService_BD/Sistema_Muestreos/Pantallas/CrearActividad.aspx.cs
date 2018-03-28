@@ -28,7 +28,7 @@ namespace Sistema_Muestreos
                 ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
                 DataSet ds = WS.CrearActividad(TextBox_NombreActividad.Text, Int32.Parse(DropDownList_TipoActividad.SelectedItem.Value), TextBox_DescripcionActividad.Text);
 
-                if (!ds.Tables[0].Rows[0].Equals("error"))
+                if (!ds.Tables[0].Rows[0].ToString().Equals("error"))
                 {
                     MessageBox("Se ha creado la Actividad correctamente");
                     Response.Redirect("Actividades.aspx");

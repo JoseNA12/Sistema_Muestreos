@@ -16,14 +16,14 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;<asp:ListBox ID="ListBox_Colaboradores" runat="server" Height="269px" Width="588px" OnSelectedIndexChanged="ListBox_Colaboradores_SelectedIndexChanged"></asp:ListBox>
+            &nbsp;<asp:ListBox ID="ListBox_Colaboradores" runat="server" Height="269px" Width="588px" AppendDataBoundItems="True" OnSelectedIndexChanged="ListBox_Colaboradores_SelectedIndexChanged"></asp:ListBox>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button_Agregar" runat="server" Text="Agregar" Height="38px" OnClick="Button_Agregar_Click" Width="86px" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button_Eliminar" runat="server" Text="Eliminar" Height="38px" Width="82px" />
+            <asp:Button ID="Button_Eliminar" runat="server" Text="Eliminar" Height="38px" Width="82px" OnClick="Button_Eliminar_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button_Salir" runat="server" Text="Salir" Width="87px" Height="38px" OnClick="Button_Salir_Click" />
         </div>

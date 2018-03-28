@@ -166,6 +166,21 @@ namespace WebService_BD
         }
 
         [WebMethod]
+        public DataSet EliminarColaborador(string colaborador)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter("crud_ColaboradorDelete", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@Nombre", colaborador);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
         public DataSet BuscarPuestos()
         {
             SqlConnection conn = new SqlConnection(conexionInfo);

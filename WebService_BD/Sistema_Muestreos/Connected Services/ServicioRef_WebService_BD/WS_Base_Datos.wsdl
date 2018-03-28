@@ -133,6 +133,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="EliminarColaborador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="colaborador" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarColaboradorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarColaboradorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="BuscarPuestos">
         <s:complexType />
       </s:element>
@@ -205,6 +226,12 @@
   <wsdl:message name="InsertarColaboradorSoapOut">
     <wsdl:part name="parameters" element="tns:InsertarColaboradorResponse" />
   </wsdl:message>
+  <wsdl:message name="EliminarColaboradorSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarColaborador" />
+  </wsdl:message>
+  <wsdl:message name="EliminarColaboradorSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarColaboradorResponse" />
+  </wsdl:message>
   <wsdl:message name="BuscarPuestosSoapIn">
     <wsdl:part name="parameters" element="tns:BuscarPuestos" />
   </wsdl:message>
@@ -241,6 +268,10 @@
     <wsdl:operation name="InsertarColaborador">
       <wsdl:input message="tns:InsertarColaboradorSoapIn" />
       <wsdl:output message="tns:InsertarColaboradorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarColaborador">
+      <wsdl:input message="tns:EliminarColaboradorSoapIn" />
+      <wsdl:output message="tns:EliminarColaboradorSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="BuscarPuestos">
       <wsdl:input message="tns:BuscarPuestosSoapIn" />
@@ -300,6 +331,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertarColaborador">
       <soap:operation soapAction="http://tempuri.org/InsertarColaborador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarColaborador">
+      <soap:operation soapAction="http://tempuri.org/EliminarColaborador" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -375,6 +415,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertarColaborador">
       <soap12:operation soapAction="http://tempuri.org/InsertarColaborador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarColaborador">
+      <soap12:operation soapAction="http://tempuri.org/EliminarColaborador" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

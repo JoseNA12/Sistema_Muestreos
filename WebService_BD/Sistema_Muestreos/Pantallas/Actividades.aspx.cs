@@ -61,6 +61,10 @@ namespace Sistema_Muestreos
                     MessageBox("Se ha eliminado la actividad correctamente.");
                     Response.Redirect(Request.Url.AbsoluteUri); // Refrescar la pagina actual
                 }
+                else
+                {
+                    MessageBox("Error al eliminar");
+                }
             }
         }
 

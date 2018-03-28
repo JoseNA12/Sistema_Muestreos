@@ -58,6 +58,13 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarColaborador", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> InsertarColaboradorAsync(string identificador, string salario, int puesto);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarColaborador", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet EliminarColaborador(string colaborador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarColaborador", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> EliminarColaboradorAsync(string colaborador);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarPuestos", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet BuscarPuestos();
@@ -146,6 +153,14 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> InsertarColaboradorAsync(string identificador, string salario, int puesto) {
             return base.Channel.InsertarColaboradorAsync(identificador, salario, puesto);
+        }
+        
+        public System.Data.DataSet EliminarColaborador(string colaborador) {
+            return base.Channel.EliminarColaborador(colaborador);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> EliminarColaboradorAsync(string colaborador) {
+            return base.Channel.EliminarColaboradorAsync(colaborador);
         }
         
         public System.Data.DataSet BuscarPuestos() {
