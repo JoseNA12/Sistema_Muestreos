@@ -44,12 +44,19 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearActividad", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> CrearActividadAsync(string pNombreActividad, int pTipoActividad, string pDescripcion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarColaborador", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarActividad", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet InsertarColaborador(string identificador, string salario, string puesto);
+        System.Data.DataSet EliminarActividad(string pNombreActividad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarActividad", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> EliminarActividadAsync(string pNombreActividad);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarColaborador", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> InsertarColaboradorAsync(string identificador, string salario, string puesto);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet InsertarColaborador(string identificador, string salario, int puesto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarColaborador", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> InsertarColaboradorAsync(string identificador, string salario, int puesto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarPuestos", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -125,11 +132,19 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
             return base.Channel.CrearActividadAsync(pNombreActividad, pTipoActividad, pDescripcion);
         }
         
-        public System.Data.DataSet InsertarColaborador(string identificador, string salario, string puesto) {
+        public System.Data.DataSet EliminarActividad(string pNombreActividad) {
+            return base.Channel.EliminarActividad(pNombreActividad);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> EliminarActividadAsync(string pNombreActividad) {
+            return base.Channel.EliminarActividadAsync(pNombreActividad);
+        }
+        
+        public System.Data.DataSet InsertarColaborador(string identificador, string salario, int puesto) {
             return base.Channel.InsertarColaborador(identificador, salario, puesto);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> InsertarColaboradorAsync(string identificador, string salario, string puesto) {
+        public System.Threading.Tasks.Task<System.Data.DataSet> InsertarColaboradorAsync(string identificador, string salario, int puesto) {
             return base.Channel.InsertarColaboradorAsync(identificador, salario, puesto);
         }
         

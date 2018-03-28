@@ -18,7 +18,7 @@ namespace Sistema_Muestreos
         private void MessageBox(string msg)
         {
             Page.Controls.Add(new LiteralControl(
-             "<script language='javascript'> window.alert('" + msg.Replace("'", "\\'") + "')</script>"));
+             "<script language='javascript'> window.alert('" + msg + "')</script>"));
         }
 
         protected void Button_Crear_Click(object sender, EventArgs e)
@@ -31,13 +31,13 @@ namespace Sistema_Muestreos
                 if (!ds.Tables[0].Rows[0].Equals("error"))
                 {
                     MessageBox("Se ha creado la Actividad correctamente");
+                    Response.Redirect("Actividades.aspx");
                 }
                 else
                 {
                     MessageBox("Error al crear la actividad");
                 }
-
-                Response.Redirect("Actividades.aspx");
+                
             }
             catch
             {

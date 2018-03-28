@@ -29,7 +29,7 @@ namespace Sistema_Muestreos
                 DataRow row = firsttable.Rows[0];
 
 
-                if (!row.ToString().Equals("error"))
+                if (!row[0].ToString().Equals("error"))
                 {
                     
                     MessageBox("Se ha registrado con éxito el usuario!. Por favor, verifique la bandeja del correo electronico " + TextBox_CorreoElectronico.Text + " para obtener la contraseña asociada a la cuenta.");

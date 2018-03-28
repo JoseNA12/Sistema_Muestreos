@@ -8,9 +8,9 @@
     <title></title>
 </head>
 
-<body style="margin: 65px auto auto auto; height: 411px; width: 452px; background-image: url('Img/Background_2.jpg'); position:center; ">
+<body style="margin: 65px auto auto auto; height: 512px; width: 452px; background-image: url('Img/Background_2.jpg'); position:center; ">
     <form id="form1" runat="server">
-        <div style="height: 477px; width: 455px;">
+        <div style="height: 516px; width: 455px;">
             <br />
             <br />
             <br />
@@ -20,7 +20,7 @@
                 <asp:Label ID="Label1" runat="server" Font-Names="Microsoft Sans Serif" Font-Size="XX-Large" Text="Sistema de Muestreos" ForeColor="White" Font-Bold="True"></asp:Label>
             </asp:Panel>
             <br />
-            <asp:Panel ID="Panel1" runat="server" Height="317px" style="margin-top: 0px" Width="451px" HorizontalAlign="Center">
+            <asp:Panel ID="Panel1" runat="server" Height="384px" style="margin-top: 0px" Width="451px" HorizontalAlign="Center">
                 <asp:Button ID="Button_AgregarUsuario" runat="server" Text="Agregar usuario" Width="178px" Font-Names="Microsoft Sans Serif" Height="38px" OnClick="Button_AgregarUsuario_Click"/>
                 <br />
                 <br />
@@ -34,6 +34,12 @@
                 <br />
                 <br />
                 <asp:Button ID="Button_Colaboradores" runat="server" Font-Names="Microsoft Sans Serif" Height="38px" Text="Colaboradores" Width="178px" OnClick="Button_Colaboradores_Click" />
+                <br />
+                <br />
+                <br />
+                <asp:Panel ID="Panel3" runat="server" HorizontalAlign="Right">
+                    <asp:Button ID="Button_Salir" runat="server" BackColor="#06627B" BorderStyle="None" Font-Names="Microsoft Sans Serif" Font-Size="Large" Font-Strikeout="False" ForeColor="White" Height="38px" Text="Salir" Width="76px" OnClick="Button_Salir_Click" />
+                </asp:Panel>
             </asp:Panel>
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

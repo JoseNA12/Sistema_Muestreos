@@ -103,7 +103,7 @@ namespace WebService_BD
             SqlConnection conn = new SqlConnection(conexionInfo);
             conn.Open();
 
-            SqlDataAdapter da = new SqlDataAdapter("retornaActividades", conn);
+            SqlDataAdapter da = new SqlDataAdapter("crud_ActividadSelect", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
             DataSet ds = new DataSet();
@@ -123,7 +123,7 @@ namespace WebService_BD
             da.SelectCommand.Parameters.AddWithValue("@Nombre", pNombreActividad);
             da.SelectCommand.Parameters.AddWithValue("@Observacion", pDescripcion);
             da.SelectCommand.Parameters.AddWithValue("@IdTipoActividad", pTipoActividad);
-            da.SelectCommand.Parameters.AddWithValue("@Estado", "True");
+            da.SelectCommand.Parameters.AddWithValue("@Estado", 1);
 
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -131,7 +131,22 @@ namespace WebService_BD
         }
 
         [WebMethod]
-        public DataSet InsertarColaborador(string identificador, string salario, string puesto)
+        public DataSet EliminarActividad(string pNombreActividad)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter("crud_ActividadDelete", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@Nombre", pNombreActividad);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet InsertarColaborador(string identificador, string salario, int puesto)
         {
             //Ingresar a la BD
             SqlConnection conn = new SqlConnection(conexionInfo);
@@ -141,7 +156,7 @@ namespace WebService_BD
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
             da.SelectCommand.Parameters.AddWithValue("@Nombre", identificador);
-            da.SelectCommand.Parameters.AddWithValue("@Puesto", puesto);
+            da.SelectCommand.Parameters.AddWithValue("@IdPuesto", puesto);
             da.SelectCommand.Parameters.AddWithValue("@Salario", salario);
             da.SelectCommand.Parameters.AddWithValue("@Estado", 1);
 

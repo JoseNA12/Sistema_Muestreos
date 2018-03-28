@@ -50,5 +50,10 @@ namespace Sistema_Muestreos
         {
             Response.Redirect("Colaboradores.aspx");
         }
+
+        protected void Button_Salir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("IniciarSesion.aspx");
+        }
     }
 }

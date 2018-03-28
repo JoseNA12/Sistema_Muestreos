@@ -49,13 +49,13 @@ namespace Sistema_Muestreos {
         protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// Control TextBox_Identidicador.
+        /// Control TextBox_Identificador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Identidicador;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Identificador;
         
         /// <summary>
         /// Control TextBox_Salario.

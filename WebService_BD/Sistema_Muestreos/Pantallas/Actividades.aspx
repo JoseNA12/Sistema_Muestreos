@@ -7,9 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<body style="margin: auto; background-image: url('Img/Background_2.jpg'); position:center; width: 726px;">
+<body style="margin: auto; background-image: url('Img/Background_2.jpg'); position:center; width: 726px; height: 540px;">
     <form id="form1" runat="server">
-        <div style="height: 511px; width: 729px; ">
+        <div style="height: 532px; width: 729px; ">
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Actividades" Font-Names="Microsoft Sans Serif" Font-Size="X-Large" ForeColor="White"></asp:Label>
@@ -21,7 +21,7 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:ListBox ID="ListBox_Actividades" runat="server" Height="240px" Width="634px" Font-Names="Microsoft Sans Serif"></asp:ListBox>
+            <asp:ListBox ID="ListBox_Actividades" runat="server" Height="240px" Width="634px" Font-Names="Microsoft Sans Serif" AppendDataBoundItems="True" OnSelectedIndexChanged="ListBox_Actividades_SelectedIndexChanged"></asp:ListBox>
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
