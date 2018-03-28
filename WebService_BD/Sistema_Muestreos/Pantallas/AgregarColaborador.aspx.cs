@@ -13,5 +13,15 @@ namespace Sistema_Muestreos
         {
 
         }
+
+        protected void Button_Agregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button_Salir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Colaboradores.aspx");
+        }
     }
 }

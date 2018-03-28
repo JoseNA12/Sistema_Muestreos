@@ -24,6 +24,128 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="RegistrarNuevoUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pApellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCorreoElectronico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNombreUsuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pIdTipoUsuario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarNuevoUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarNuevoUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerActividades">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerActividadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerActividadesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearActividad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pNombreActividad" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pTipoActividad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pDescripcion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearActividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearActividadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarColaborador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identificador" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="salario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="puesto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarColaboradorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarColaboradorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarPuestos">
+        <s:complexType />
+      </s:element>
+      <s:element name="BuscarPuestosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarPuestosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarColaboradores">
+        <s:complexType />
+      </s:element>
+      <s:element name="BuscarColaboradoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarColaboradoresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="VerificarCredencialesSoapIn">
@@ -32,10 +154,70 @@
   <wsdl:message name="VerificarCredencialesSoapOut">
     <wsdl:part name="parameters" element="tns:VerificarCredencialesResponse" />
   </wsdl:message>
+  <wsdl:message name="RegistrarNuevoUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarNuevoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarNuevoUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarNuevoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerActividadesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerActividades" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerActividadesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerActividadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearActividadSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearActividad" />
+  </wsdl:message>
+  <wsdl:message name="CrearActividadSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearActividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarColaboradorSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarColaborador" />
+  </wsdl:message>
+  <wsdl:message name="InsertarColaboradorSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarColaboradorResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarPuestosSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarPuestos" />
+  </wsdl:message>
+  <wsdl:message name="BuscarPuestosSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarPuestosResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarColaboradoresSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarColaboradores" />
+  </wsdl:message>
+  <wsdl:message name="BuscarColaboradoresSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarColaboradoresResponse" />
+  </wsdl:message>
   <wsdl:portType name="WS_Base_DatosSoap">
     <wsdl:operation name="VerificarCredenciales">
       <wsdl:input message="tns:VerificarCredencialesSoapIn" />
       <wsdl:output message="tns:VerificarCredencialesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarNuevoUsuario">
+      <wsdl:input message="tns:RegistrarNuevoUsuarioSoapIn" />
+      <wsdl:output message="tns:RegistrarNuevoUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerActividades">
+      <wsdl:input message="tns:ObtenerActividadesSoapIn" />
+      <wsdl:output message="tns:ObtenerActividadesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearActividad">
+      <wsdl:input message="tns:CrearActividadSoapIn" />
+      <wsdl:output message="tns:CrearActividadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarColaborador">
+      <wsdl:input message="tns:InsertarColaboradorSoapIn" />
+      <wsdl:output message="tns:InsertarColaboradorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPuestos">
+      <wsdl:input message="tns:BuscarPuestosSoapIn" />
+      <wsdl:output message="tns:BuscarPuestosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarColaboradores">
+      <wsdl:input message="tns:BuscarColaboradoresSoapIn" />
+      <wsdl:output message="tns:BuscarColaboradoresSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WS_Base_DatosSoap" type="tns:WS_Base_DatosSoap">
@@ -49,11 +231,119 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RegistrarNuevoUsuario">
+      <soap:operation soapAction="http://tempuri.org/RegistrarNuevoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerActividades">
+      <soap:operation soapAction="http://tempuri.org/ObtenerActividades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearActividad">
+      <soap:operation soapAction="http://tempuri.org/CrearActividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarColaborador">
+      <soap:operation soapAction="http://tempuri.org/InsertarColaborador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPuestos">
+      <soap:operation soapAction="http://tempuri.org/BuscarPuestos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarColaboradores">
+      <soap:operation soapAction="http://tempuri.org/BuscarColaboradores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WS_Base_DatosSoap12" type="tns:WS_Base_DatosSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="VerificarCredenciales">
       <soap12:operation soapAction="http://tempuri.org/VerificarCredenciales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarNuevoUsuario">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarNuevoUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerActividades">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerActividades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearActividad">
+      <soap12:operation soapAction="http://tempuri.org/CrearActividad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarColaborador">
+      <soap12:operation soapAction="http://tempuri.org/InsertarColaborador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPuestos">
+      <soap12:operation soapAction="http://tempuri.org/BuscarPuestos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarColaboradores">
+      <soap12:operation soapAction="http://tempuri.org/BuscarColaboradores" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

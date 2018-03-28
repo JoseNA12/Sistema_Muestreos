@@ -8,19 +8,20 @@
     <title>Iniciar Sesión</title>
     <style type="text/css">
         #form1 {
-            height: 492px;
+            height: 559px;
             width: 525px;
             margin-bottom: 0px;
         }
     </style>
 </head>
-<body style="margin: auto; height: 489px; width: 515px; background-image: url('Backgrounds.jpg'); position:center; ">
+<body style="margin: auto; height: 584px; width: 515px; background-image: url('Img/Background_2.jpg'); position:center; ">
     <form id="form1" runat="server" autocomplete="on">
         <div style=" margin-left: auto; margin-right:auto;">
-            <asp:Panel ID="Panel1" runat="server" Height="483px" Width="518px" HorizontalAlign="Center">
-                <asp:Panel ID="Panel2" runat="server" BackColor="White" Height="497px" HorizontalAlign="Center" style="margin-left: 128px; margin-right: 1px; margin-top: 0px; margin-bottom: 1px" Width="268px">
+            <asp:Panel ID="Panel1" runat="server" Height="584px" Width="518px" HorizontalAlign="Center" style="margin-top: 55px">
+                <asp:Panel ID="Panel2" runat="server" BackColor="White" Height="545px" HorizontalAlign="Center" style="margin-left: 128px; margin-right: 1px; margin-top: 0px; margin-bottom: 1px" Width="268px">
                     <br />
                     <asp:Image ID="Image1" runat="server" Height="130px" ImageUrl="~/Pantallas/Img/login.png" Width="130px" />
+                    <br />
                     <br />
                     <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Microsoft Sans Serif" Font-Size="Large" Text="Iniciar Sesión"></asp:Label>
                     <br />

@@ -22,6 +22,48 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerificarCredenciales", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> VerificarCredencialesAsync(string pNombreUsuario, string pContrasenia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarNuevoUsuario", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet RegistrarNuevoUsuario(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, int pIdTipoUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarNuevoUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> RegistrarNuevoUsuarioAsync(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, int pIdTipoUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerActividades", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ObtenerActividades();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerActividades", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ObtenerActividadesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearActividad", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet CrearActividad(string pNombreActividad, int pTipoActividad, string pDescripcion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearActividad", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> CrearActividadAsync(string pNombreActividad, int pTipoActividad, string pDescripcion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarColaborador", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet InsertarColaborador(string identificador, string salario, string puesto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarColaborador", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> InsertarColaboradorAsync(string identificador, string salario, string puesto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarPuestos", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet BuscarPuestos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarPuestos", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> BuscarPuestosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarColaboradores", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet BuscarColaboradores();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarColaboradores", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> BuscarColaboradoresAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -57,6 +99,54 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> VerificarCredencialesAsync(string pNombreUsuario, string pContrasenia) {
             return base.Channel.VerificarCredencialesAsync(pNombreUsuario, pContrasenia);
+        }
+        
+        public System.Data.DataSet RegistrarNuevoUsuario(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, int pIdTipoUsuario) {
+            return base.Channel.RegistrarNuevoUsuario(pNombre, pApellidos, pCorreoElectronico, pNombreUsuario, pIdTipoUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> RegistrarNuevoUsuarioAsync(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, int pIdTipoUsuario) {
+            return base.Channel.RegistrarNuevoUsuarioAsync(pNombre, pApellidos, pCorreoElectronico, pNombreUsuario, pIdTipoUsuario);
+        }
+        
+        public System.Data.DataSet ObtenerActividades() {
+            return base.Channel.ObtenerActividades();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> ObtenerActividadesAsync() {
+            return base.Channel.ObtenerActividadesAsync();
+        }
+        
+        public System.Data.DataSet CrearActividad(string pNombreActividad, int pTipoActividad, string pDescripcion) {
+            return base.Channel.CrearActividad(pNombreActividad, pTipoActividad, pDescripcion);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> CrearActividadAsync(string pNombreActividad, int pTipoActividad, string pDescripcion) {
+            return base.Channel.CrearActividadAsync(pNombreActividad, pTipoActividad, pDescripcion);
+        }
+        
+        public System.Data.DataSet InsertarColaborador(string identificador, string salario, string puesto) {
+            return base.Channel.InsertarColaborador(identificador, salario, puesto);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> InsertarColaboradorAsync(string identificador, string salario, string puesto) {
+            return base.Channel.InsertarColaboradorAsync(identificador, salario, puesto);
+        }
+        
+        public System.Data.DataSet BuscarPuestos() {
+            return base.Channel.BuscarPuestos();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> BuscarPuestosAsync() {
+            return base.Channel.BuscarPuestosAsync();
+        }
+        
+        public System.Data.DataSet BuscarColaboradores() {
+            return base.Channel.BuscarColaboradores();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> BuscarColaboradoresAsync() {
+            return base.Channel.BuscarColaboradoresAsync();
         }
     }
 }

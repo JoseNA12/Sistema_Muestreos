@@ -7,35 +7,49 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<body style="height: 411px; width: 579px; background-image: url('Backgrounds.jpg'); position:center; margin-bottom:auto; margin-top:auto; margin-left:auto; margin-right:auto;">
+
+<body style="margin: 65px auto auto auto; height: 411px; width: 452px; background-image: url('Img/Background_2.jpg'); position:center; ">
     <form id="form1" runat="server">
-        <div style="height: 414px; width: 583px;">
+        <div style="height: 477px; width: 455px;">
+            <br />
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+            <asp:Panel ID="Panel2" runat="server" HorizontalAlign="Center">
+                <asp:Label ID="Label1" runat="server" Font-Names="Microsoft Sans Serif" Font-Size="XX-Large" Text="Sistema de Muestreos" ForeColor="White" Font-Bold="True"></asp:Label>
+            </asp:Panel>
+            <br />
+            <asp:Panel ID="Panel1" runat="server" Height="317px" style="margin-top: 0px" Width="451px" HorizontalAlign="Center">
+                <asp:Button ID="Button_AgregarUsuario" runat="server" Text="Agregar usuario" Width="178px" Font-Names="Microsoft Sans Serif" Height="38px" OnClick="Button_AgregarUsuario_Click"/>
+                <br />
+                <br />
+                <asp:Button ID="Button_Muestreo" runat="server" Font-Names="Microsoft Sans Serif" Height="38px" Text="Muestreo" Width="178px" OnClick="Button_Muestreo_Click" />
+                <br />
+                <br />
+                <asp:Button ID="Button_CrearRevision" runat="server" Font-Names="Microsoft Sans Serif" Height="38px" Text="Crear revisión" Width="178px" OnClick="Button_CrearRevision_Click" />
+                <br />
+                <br />
+                <asp:Button ID="Button_Actividades" runat="server" Font-Names="Microsoft Sans Serif" Height="38px" Text="Actividades" Width="178px" OnClick="Button_Actividades_Click" />
+                <br />
+                <br />
+                <asp:Button ID="Button_Colaboradores" runat="server" Font-Names="Microsoft Sans Serif" Height="38px" Text="Colaboradores" Width="178px" OnClick="Button_Colaboradores_Click" />
+            </asp:Panel>
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Agregar usuario" Width="178px" />
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
-&nbsp;
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click1" Text="Muestreo" Width="178px" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button3" runat="server" Text="Crear revisión" Width="178px" />
             <br />
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button4" runat="server" Text="Actividades" Width="178px" />
-            <br />
-            <br />
-            <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button5" runat="server" Text="Colaboradores" Width="178px" />
-        </div>
+            </div>
     </form>
 </body>
 </html>

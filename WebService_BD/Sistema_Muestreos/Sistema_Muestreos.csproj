@@ -76,7 +76,9 @@
     <Content Include="Pantallas\Colaboradores.aspx" />
     <Content Include="Pantallas\CrearActividad.aspx" />
     <Content Include="Pantallas\CrearUsuario.aspx" />
+    <Content Include="Pantallas\Img\Background_2.jpg" />
     <Content Include="Pantallas\Img\login.png" />
+    <Content Include="Pantallas\Img\logo-construccion.png" />
     <Content Include="Pantallas\MainAdministrador.aspx" />
     <Content Include="Pantallas\ModificarActividad.aspx" />
     <Content Include="Pantallas\MuestreoPreliminar2.aspx" />
@@ -200,7 +202,9 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServicioRef_WebService_BD\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pantallas\CSS\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
