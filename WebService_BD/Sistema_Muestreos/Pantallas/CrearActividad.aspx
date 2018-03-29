@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CrearActividad.aspx.cs" Inherits="Sistema_Muestreos.CrearActividad" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CrearActividad.aspx.cs" Inherits="Sistema_Muestreos.CrearActividad" StyleSheetTheme="" %>
 
 <!DOCTYPE html>
 

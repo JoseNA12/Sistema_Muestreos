@@ -89,6 +89,30 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ModificarActividad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pNombreOriginal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pDescripcion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pTipo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarActividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModificarActividadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="EliminarActividad">
         <s:complexType>
           <s:sequence>
@@ -100,6 +124,27 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="EliminarActividadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerActividad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pNombreActividad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerActividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerActividadResult">
               <s:complexType>
                 <s:sequence>
                   <s:element ref="s:schema" />
@@ -188,6 +233,28 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ActualizarContrasenia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarContraseniaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarContraseniaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="VerificarCredencialesSoapIn">
@@ -214,11 +281,23 @@
   <wsdl:message name="CrearActividadSoapOut">
     <wsdl:part name="parameters" element="tns:CrearActividadResponse" />
   </wsdl:message>
+  <wsdl:message name="ModificarActividadSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarActividad" />
+  </wsdl:message>
+  <wsdl:message name="ModificarActividadSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarActividadResponse" />
+  </wsdl:message>
   <wsdl:message name="EliminarActividadSoapIn">
     <wsdl:part name="parameters" element="tns:EliminarActividad" />
   </wsdl:message>
   <wsdl:message name="EliminarActividadSoapOut">
     <wsdl:part name="parameters" element="tns:EliminarActividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerActividadSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerActividad" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerActividadSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerActividadResponse" />
   </wsdl:message>
   <wsdl:message name="InsertarColaboradorSoapIn">
     <wsdl:part name="parameters" element="tns:InsertarColaborador" />
@@ -244,6 +323,12 @@
   <wsdl:message name="BuscarColaboradoresSoapOut">
     <wsdl:part name="parameters" element="tns:BuscarColaboradoresResponse" />
   </wsdl:message>
+  <wsdl:message name="ActualizarContraseniaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarContrasenia" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarContraseniaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarContraseniaResponse" />
+  </wsdl:message>
   <wsdl:portType name="WS_Base_DatosSoap">
     <wsdl:operation name="VerificarCredenciales">
       <wsdl:input message="tns:VerificarCredencialesSoapIn" />
@@ -261,9 +346,17 @@
       <wsdl:input message="tns:CrearActividadSoapIn" />
       <wsdl:output message="tns:CrearActividadSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ModificarActividad">
+      <wsdl:input message="tns:ModificarActividadSoapIn" />
+      <wsdl:output message="tns:ModificarActividadSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="EliminarActividad">
       <wsdl:input message="tns:EliminarActividadSoapIn" />
       <wsdl:output message="tns:EliminarActividadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerActividad">
+      <wsdl:input message="tns:ObtenerActividadSoapIn" />
+      <wsdl:output message="tns:ObtenerActividadSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="InsertarColaborador">
       <wsdl:input message="tns:InsertarColaboradorSoapIn" />
@@ -280,6 +373,10 @@
     <wsdl:operation name="BuscarColaboradores">
       <wsdl:input message="tns:BuscarColaboradoresSoapIn" />
       <wsdl:output message="tns:BuscarColaboradoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContrasenia">
+      <wsdl:input message="tns:ActualizarContraseniaSoapIn" />
+      <wsdl:output message="tns:ActualizarContraseniaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WS_Base_DatosSoap" type="tns:WS_Base_DatosSoap">
@@ -320,8 +417,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ModificarActividad">
+      <soap:operation soapAction="http://tempuri.org/ModificarActividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="EliminarActividad">
       <soap:operation soapAction="http://tempuri.org/EliminarActividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerActividad">
+      <soap:operation soapAction="http://tempuri.org/ObtenerActividad" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -358,6 +473,15 @@
     </wsdl:operation>
     <wsdl:operation name="BuscarColaboradores">
       <soap:operation soapAction="http://tempuri.org/BuscarColaboradores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContrasenia">
+      <soap:operation soapAction="http://tempuri.org/ActualizarContrasenia" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -404,8 +528,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ModificarActividad">
+      <soap12:operation soapAction="http://tempuri.org/ModificarActividad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="EliminarActividad">
       <soap12:operation soapAction="http://tempuri.org/EliminarActividad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerActividad">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerActividad" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -442,6 +584,15 @@
     </wsdl:operation>
     <wsdl:operation name="BuscarColaboradores">
       <soap12:operation soapAction="http://tempuri.org/BuscarColaboradores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContrasenia">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarContrasenia" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

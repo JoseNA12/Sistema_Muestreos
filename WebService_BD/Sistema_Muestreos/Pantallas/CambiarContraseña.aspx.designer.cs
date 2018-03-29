@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Sistema_Muestreos {
+namespace Sistema_Muestreos.Pantallas {
     
     
-    public partial class WebForm1 {
+    public partial class CambiarContraseña {
         
         /// <summary>
         /// Control form1.
@@ -20,6 +20,15 @@ namespace Sistema_Muestreos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// Control Label2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
         /// Control Panel1.
@@ -40,22 +49,13 @@ namespace Sistema_Muestreos {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control Label2.
+        /// Control TextBox_Contrasenia_1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// Control TextBox_NombreNuevoMuestreo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_NombreNuevoMuestreo;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Contrasenia_1;
         
         /// <summary>
         /// Control Label3.
@@ -67,30 +67,39 @@ namespace Sistema_Muestreos {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control TextBox_DescripcionNuevoMuestreo.
+        /// Control TextBox_Contrasenia_2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_DescripcionNuevoMuestreo;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Contrasenia_2;
         
         /// <summary>
-        /// Control Button_CrearMuestreo.
+        /// Control CheckBox_EstasSeguro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_CrearMuestreo;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_EstasSeguro;
         
         /// <summary>
-        /// Control Button_CancelarNuevoMuestreo.
+        /// Control Button_Atras.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_CancelarNuevoMuestreo;
+        protected global::System.Web.UI.WebControls.Button Button_Atras;
+        
+        /// <summary>
+        /// Control Button_CambiarContraseña.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_CambiarContraseña;
     }
 }

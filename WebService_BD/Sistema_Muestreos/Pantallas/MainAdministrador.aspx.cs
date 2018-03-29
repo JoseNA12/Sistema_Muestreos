@@ -33,7 +33,7 @@ namespace Sistema_Muestreos
 
         protected void Button_Muestreo_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Muestreo.aspx");
         }
 
         protected void Button_CrearRevision_Click(object sender, EventArgs e)
@@ -54,6 +54,11 @@ namespace Sistema_Muestreos
         protected void Button_Salir_Click(object sender, EventArgs e)
         {
             Response.Redirect("IniciarSesion.aspx");
+        }
+
+        protected void Button_CambiarContrasenia_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CambiarContraseña.aspx");
         }
     }
 }

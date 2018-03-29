@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<body style="margin: auto; height: 380px; width: 440px; background-image: url('Img/Background_2.jpg'); position:center; ">
+<body style="margin: auto; height: 380px; width: 440px; background-image: url('Img/Background_2.jpg'); position:center;">
     <form id="form1" runat="server">
         <div style="height: 378px; width: 446px; ">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

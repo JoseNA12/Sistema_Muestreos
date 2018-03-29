@@ -92,5 +92,17 @@ namespace Sistema_Muestreos
         {
             Response.Redirect("CrearActividad.aspx");
         }
+
+        protected void Button_Modificar_Click(object sender, EventArgs e)
+        {
+            if (itemSeleccionado != null)
+            {
+                Response.Redirect("ModificarActividad.aspx?parametro=" + itemSeleccionado.Text);
+            }
+            else
+            {
+                MessageBox("Seleccione una actividad para poder modificarla.");
+            }
+        }
     }
 }

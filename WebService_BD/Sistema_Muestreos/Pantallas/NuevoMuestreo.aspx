@@ -23,20 +23,20 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="txtNombreNuevoMuestreo" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBox_NombreNuevoMuestreo" runat="server"></asp:TextBox>
                 <br />
                 &nbsp;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="Label3" runat="server" Font-Names="Microsoft Sans Serif" Text="Ingrese una descripción del muestreo a crear"></asp:Label>
                 <br />
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="txtDescripcionNuevoMuestreo" runat="server" ClientIDMode="Predictable" Height="63px" Width="436px"></asp:TextBox>
+                <asp:TextBox ID="TextBox_DescripcionNuevoMuestreo" runat="server" ClientIDMode="Predictable" Height="63px" Width="436px" TextMode="MultiLine"></asp:TextBox>
                 <br />
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="BtnCrearMuestreo" runat="server" Text="Crear" Height="38px" Width="76px" />
+                <asp:Button ID="Button_CrearMuestreo" runat="server" Text="Crear" Height="38px" Width="76px" OnClick="Button_CrearMuestreo_Click" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                <asp:Button ID="BtnCancelarNuevoMuestreo" runat="server" Text="Cancelar" Height="38px" />
+                <asp:Button ID="Button_CancelarNuevoMuestreo" runat="server" Text="Cancelar" Height="38px" OnClick="Button_CancelarNuevoMuestreo_Click" />
             </asp:Panel>
         </div>
     </form>

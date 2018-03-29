@@ -14,15 +14,25 @@ namespace Sistema_Muestreos
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-
-        }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Button_FinalizarMuestreo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button_NuevoMuestreo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("NuevoMuestreo.aspx");
+        }
+
+        protected void Button_Atras_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainAdministrador.aspx");
         }
     }
 }

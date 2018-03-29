@@ -18,7 +18,6 @@ namespace WebService_BD
     // [System.Web.Script.Services.ScriptService]
     public class WS_Base_Datos : System.Web.Services.WebService
     {
-
         private string conexionInfo = 
             "Data Source =JOSENA\\SQLEXPRESS;" + // Nombre de usuario de SQL Server
             "Initial Catalog=SistemaMuestreos;" + // Nombre de la base de datos
@@ -131,6 +130,26 @@ namespace WebService_BD
         }
 
         [WebMethod]
+        public DataSet ModificarActividad(string pNombreOriginal, string pNombre, string pDescripcion, int pTipo)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter("crud_ActividadUpdate", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@NombreOriginal", pNombreOriginal);
+            da.SelectCommand.Parameters.AddWithValue("@Nombre", pNombre);
+            da.SelectCommand.Parameters.AddWithValue("@Observacion", pDescripcion);
+            da.SelectCommand.Parameters.AddWithValue("@IdTipoActividad", pTipo);
+            da.SelectCommand.Parameters.AddWithValue("@Estado", 1);
+
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
         public DataSet EliminarActividad(string pNombreActividad)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
@@ -139,6 +158,21 @@ namespace WebService_BD
             SqlDataAdapter da = new SqlDataAdapter("crud_ActividadDelete", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@Nombre", pNombreActividad);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet ObtenerActividad(string pNombreActividad)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter("SeleccionarActividad", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@pNombre", pNombreActividad);
 
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -201,6 +235,27 @@ namespace WebService_BD
 
             SqlDataAdapter da = new SqlDataAdapter("crud_ColaboradorSelect", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet ActualizarContrasenia(string usuario, string contraseña)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter("crud_UsuarioUpdate", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@UsuarioIdentificador", usuario);
+            da.SelectCommand.Parameters.AddWithValue("@Usuario", null);
+            da.SelectCommand.Parameters.AddWithValue("@Contraseña", contraseña);
+            da.SelectCommand.Parameters.AddWithValue("@IdTipoUsuario", null);
+            da.SelectCommand.Parameters.AddWithValue("@Nombre", null);
+            da.SelectCommand.Parameters.AddWithValue("@Apellido", null);
+            da.SelectCommand.Parameters.AddWithValue("@Estado", null);
+            da.SelectCommand.Parameters.AddWithValue("@Correo", null);
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;

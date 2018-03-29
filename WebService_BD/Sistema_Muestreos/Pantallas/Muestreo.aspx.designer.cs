@@ -49,39 +49,57 @@ namespace Sistema_Muestreos {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control ListaLapsoTiempo.
+        /// Control TextBox_LapsePersonalizado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ListaLapsoTiempo;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_LapsePersonalizado;
         
         /// <summary>
-        /// Control BtnNuevoMuestreo.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnNuevoMuestreo;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control BtnFinalizarMuestreo.
+        /// Control CheckBox1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnFinalizarMuestreo;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
         
         /// <summary>
-        /// Control BtnAtras.
+        /// Control Button_NuevoMuestreo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAtras;
+        protected global::System.Web.UI.WebControls.Button Button_NuevoMuestreo;
+        
+        /// <summary>
+        /// Control Button_FinalizarMuestreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_FinalizarMuestreo;
+        
+        /// <summary>
+        /// Control Button_Atras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Atras;
     }
 }

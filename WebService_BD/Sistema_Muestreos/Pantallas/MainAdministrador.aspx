@@ -38,6 +38,8 @@
                 <br />
                 <br />
                 <asp:Panel ID="Panel3" runat="server" HorizontalAlign="Right">
+                    <asp:Button ID="Button_CambiarContrasenia" runat="server" BackColor="#06627B" BorderStyle="None" ForeColor="White" OnClick="Button_CambiarContrasenia_Click" Text="Cambiar contraseña" Width="126px" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="Button_Salir" runat="server" BackColor="#06627B" BorderStyle="None" Font-Names="Microsoft Sans Serif" Font-Size="Large" Font-Strikeout="False" ForeColor="White" Height="38px" Text="Salir" Width="76px" OnClick="Button_Salir_Click" />
                 </asp:Panel>
             </asp:Panel>

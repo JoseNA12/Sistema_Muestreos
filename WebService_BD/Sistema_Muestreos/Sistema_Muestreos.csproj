@@ -72,6 +72,8 @@
     <None Include="packages.config" />
     <Content Include="Pantallas\Actividades.aspx" />
     <Content Include="Pantallas\AgregarColaborador.aspx" />
+    <Content Include="Pantallas\CambiarContraseña.aspx" />
+    <Content Include="Pantallas\CSS\Button2.css" />
     <Content Include="Pantallas\Img\Backgrounds.jpg" />
     <Content Include="Pantallas\Colaboradores.aspx" />
     <Content Include="Pantallas\CrearActividad.aspx" />
@@ -123,6 +125,13 @@
     </Compile>
     <Compile Include="Pantallas\AgregarColaborador.aspx.designer.cs">
       <DependentUpon>AgregarColaborador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\CambiarContraseña.aspx.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\CambiarContraseña.aspx.designer.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\Colaboradores.aspx.cs">
       <DependentUpon>Colaboradores.aspx</DependentUpon>
@@ -202,9 +211,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServicioRef_WebService_BD\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pantallas\CSS\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
