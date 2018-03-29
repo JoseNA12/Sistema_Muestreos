@@ -34,9 +34,10 @@
                 <asp:CheckBox ID="CheckBox_EstasSeguro" runat="server" Font-Names="Microsoft Sans Serif" Font-Size="Medium" Text="¿Estás seguro?" />
                 <br />
                 <br />
-                <asp:Button ID="Button_Atras" runat="server" Font-Names="Microsoft Sans Serif" Height="38px" OnClick="Button_Atras_Click" Text="Atras" Width="70px" />
                 &nbsp;&nbsp;
                 <asp:Button ID="Button_CambiarContraseña" runat="server" Height="38px" OnClick="Button_CambiarContraseña_Click" Text="Cambiar" Width="80px" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Button_Atras" runat="server" Font-Names="Microsoft Sans Serif" Height="38px" OnClick="Button_Atras_Click" Text="Atras" Width="70px" />
             </asp:Panel>
             <br />
             <br />

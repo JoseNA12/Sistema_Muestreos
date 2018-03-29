@@ -234,6 +234,48 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ObtenerMuestreoPreliminarId">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerMuestreoPreliminarIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerMuestreoPreliminarIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarRevisionColaborador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pIdMP" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdColaborador" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pIdAtividad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pUsuarioRegistrador" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pDescripcion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarRevisionColaboradorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarRevisionColaboradorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="ActualizarContrasenia">
         <s:complexType>
           <s:sequence>
@@ -246,6 +288,30 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="ActualizarContraseniaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearMuestreoPreliminar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idMuestreo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechahora" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="temperatura" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="humedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearMuestreoPreliminarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearMuestreoPreliminarResult">
               <s:complexType>
                 <s:sequence>
                   <s:element ref="s:schema" />
@@ -324,11 +390,29 @@
   <wsdl:message name="BuscarColaboradoresSoapOut">
     <wsdl:part name="parameters" element="tns:BuscarColaboradoresResponse" />
   </wsdl:message>
+  <wsdl:message name="ObtenerMuestreoPreliminarIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerMuestreoPreliminarId" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMuestreoPreliminarIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerMuestreoPreliminarIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarRevisionColaboradorSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarRevisionColaborador" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarRevisionColaboradorSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarRevisionColaboradorResponse" />
+  </wsdl:message>
   <wsdl:message name="ActualizarContraseniaSoapIn">
     <wsdl:part name="parameters" element="tns:ActualizarContrasenia" />
   </wsdl:message>
   <wsdl:message name="ActualizarContraseniaSoapOut">
     <wsdl:part name="parameters" element="tns:ActualizarContraseniaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearMuestreoPreliminarSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearMuestreoPreliminar" />
+  </wsdl:message>
+  <wsdl:message name="CrearMuestreoPreliminarSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearMuestreoPreliminarResponse" />
   </wsdl:message>
   <wsdl:portType name="WS_Base_DatosSoap">
     <wsdl:operation name="VerificarCredenciales">
@@ -375,9 +459,21 @@
       <wsdl:input message="tns:BuscarColaboradoresSoapIn" />
       <wsdl:output message="tns:BuscarColaboradoresSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ObtenerMuestreoPreliminarId">
+      <wsdl:input message="tns:ObtenerMuestreoPreliminarIdSoapIn" />
+      <wsdl:output message="tns:ObtenerMuestreoPreliminarIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarRevisionColaborador">
+      <wsdl:input message="tns:RegistrarRevisionColaboradorSoapIn" />
+      <wsdl:output message="tns:RegistrarRevisionColaboradorSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ActualizarContrasenia">
       <wsdl:input message="tns:ActualizarContraseniaSoapIn" />
       <wsdl:output message="tns:ActualizarContraseniaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearMuestreoPreliminar">
+      <wsdl:input message="tns:CrearMuestreoPreliminarSoapIn" />
+      <wsdl:output message="tns:CrearMuestreoPreliminarSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WS_Base_DatosSoap" type="tns:WS_Base_DatosSoap">
@@ -481,8 +577,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ObtenerMuestreoPreliminarId">
+      <soap:operation soapAction="http://tempuri.org/ObtenerMuestreoPreliminarId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarRevisionColaborador">
+      <soap:operation soapAction="http://tempuri.org/RegistrarRevisionColaborador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ActualizarContrasenia">
       <soap:operation soapAction="http://tempuri.org/ActualizarContrasenia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearMuestreoPreliminar">
+      <soap:operation soapAction="http://tempuri.org/CrearMuestreoPreliminar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -592,8 +715,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ObtenerMuestreoPreliminarId">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerMuestreoPreliminarId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarRevisionColaborador">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarRevisionColaborador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ActualizarContrasenia">
       <soap12:operation soapAction="http://tempuri.org/ActualizarContrasenia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearMuestreoPreliminar">
+      <soap12:operation soapAction="http://tempuri.org/CrearMuestreoPreliminar" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -18,11 +18,11 @@ namespace WebService_BD
     // [System.Web.Script.Services.ScriptService]
     public class WS_Base_Datos : System.Web.Services.WebService
     {
-        private string conexionInfo = 
+        private string conexionInfo =
             "Data Source =JOSENA\\SQLEXPRESS;" + // Nombre de usuario de SQL Server
             "Initial Catalog=SistemaMuestreos;" + // Nombre de la base de datos
-            //"User id=;" +
-            //"Password=;";
+                                                  //"User id=;" +
+                                                  //"Password=;";
             "Integrated Security=True;"; //Sin contraseña en la bd
 
         /*private DataSet CrearPeticion(string pInstruccion)
@@ -224,6 +224,38 @@ namespace WebService_BD
             da.Fill(ds);
             return ds;
         }
+    
+        [WebMethod]
+        public DataSet ObtenerMuestreoPreliminarId()
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter("DevolverMuestreoPreliminarId", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet RegistrarRevisionColaborador(int pIdMP, string IdColaborador, int pIdAtividad, string pUsuarioRegistrador, string pDescripcion)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoPreliminarObservacionInsert", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@IdMP", pIdMP);
+            da.SelectCommand.Parameters.AddWithValue("@IdColaborador", IdColaborador);
+            da.SelectCommand.Parameters.AddWithValue("@IdActividad", pIdAtividad);
+            da.SelectCommand.Parameters.AddWithValue("@UsuarioRegistrador", pUsuarioRegistrador);
+            da.SelectCommand.Parameters.AddWithValue("@Descripcion", pDescripcion);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
 
         [WebMethod]
         public DataSet ActualizarContrasenia(string usuario, string contraseña)
@@ -241,6 +273,24 @@ namespace WebService_BD
             da.SelectCommand.Parameters.AddWithValue("@Apellido", null);
             da.SelectCommand.Parameters.AddWithValue("@Estado", null);
             da.SelectCommand.Parameters.AddWithValue("@Correo", null);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+
+        [WebMethod]
+        public DataSet CrearMuestreoPreliminar(string idMuestreo, string fechahora, string temperatura, string humedad)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoPreliminarInsert", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", idMuestreo);
+            da.SelectCommand.Parameters.AddWithValue("@FechaHora", fechahora);
+            da.SelectCommand.Parameters.AddWithValue("@Humedad", humedad);
+            da.SelectCommand.Parameters.AddWithValue("@Temperatura", temperatura);
+
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;

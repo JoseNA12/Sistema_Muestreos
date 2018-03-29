@@ -7,9 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<body style="margin: auto; background-image: url('Img/Background_2.jpg'); width: 410px; position:center; ">
+<body style="margin: auto; background-image: url('Img/Background_2.jpg'); width: 398px; position:center; ">
     <form id="form1" runat="server">
-        <div style="height: 437px; width: 412px;">
+        <div style="height: 442px; width: 396px;">
             &nbsp;&nbsp;<br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Crear usuario" Font-Names="Microsoft Sans Serif" Font-Size="X-Large" ForeColor="White"></asp:Label>
@@ -50,8 +50,10 @@
             <br />
             <br />
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button_CrearUsuario" runat="server" Text="Crear usuario" Font-Names="Microsoft Sans Serif" OnClick="Button_CrearUsuario_Click" Height="38px" Width="120px" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button_Atras" runat="server" Height="38px" OnClick="Button_Atras_Click" Text="Atras" Width="85px" />
         </div>
     </form>
 </body>

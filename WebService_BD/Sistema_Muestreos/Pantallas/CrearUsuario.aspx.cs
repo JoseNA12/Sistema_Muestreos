@@ -109,5 +109,10 @@ namespace Sistema_Muestreos
             }
             return contraseñaGenerada;
         }
+
+        protected void Button_Atras_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainAdministrador.aspx");
+        }
     }
 }

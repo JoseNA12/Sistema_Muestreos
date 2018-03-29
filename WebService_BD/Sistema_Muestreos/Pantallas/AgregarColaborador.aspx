@@ -42,7 +42,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button_Agregar" runat="server" Text="Agregar" Height="39px" OnClick="Button_Agregar_Click" Width="87px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button_Salir" runat="server" Text="Salir" Width="92px" Height="38px" OnClick="Button_Salir_Click" />
+            <asp:Button ID="Button_Salir" runat="server" Text="Atras" Width="92px" Height="38px" OnClick="Button_Salir_Click" />
         </div>
     </form>
 </body>

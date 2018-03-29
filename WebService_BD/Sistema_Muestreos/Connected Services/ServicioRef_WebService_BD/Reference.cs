@@ -93,12 +93,33 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarColaboradores", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> BuscarColaboradoresAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerMuestreoPreliminarId", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ObtenerMuestreoPreliminarId();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerMuestreoPreliminarId", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ObtenerMuestreoPreliminarIdAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarRevisionColaborador", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet RegistrarRevisionColaborador(int pIdMP, string IdColaborador, int pIdAtividad, string pUsuarioRegistrador, string pDescripcion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarRevisionColaborador", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> RegistrarRevisionColaboradorAsync(int pIdMP, string IdColaborador, int pIdAtividad, string pUsuarioRegistrador, string pDescripcion);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ActualizarContrasenia", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet ActualizarContrasenia(string usuario, string contraseña);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ActualizarContrasenia", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> ActualizarContraseniaAsync(string usuario, string contraseña);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearMuestreoPreliminar", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet CrearMuestreoPreliminar(string idMuestreo, string fechahora, string temperatura, string humedad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearMuestreoPreliminar", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> CrearMuestreoPreliminarAsync(string idMuestreo, string fechahora, string temperatura, string humedad);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -216,12 +237,36 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
             return base.Channel.BuscarColaboradoresAsync();
         }
         
+        public System.Data.DataSet ObtenerMuestreoPreliminarId() {
+            return base.Channel.ObtenerMuestreoPreliminarId();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> ObtenerMuestreoPreliminarIdAsync() {
+            return base.Channel.ObtenerMuestreoPreliminarIdAsync();
+        }
+        
+        public System.Data.DataSet RegistrarRevisionColaborador(int pIdMP, string IdColaborador, int pIdAtividad, string pUsuarioRegistrador, string pDescripcion) {
+            return base.Channel.RegistrarRevisionColaborador(pIdMP, IdColaborador, pIdAtividad, pUsuarioRegistrador, pDescripcion);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> RegistrarRevisionColaboradorAsync(int pIdMP, string IdColaborador, int pIdAtividad, string pUsuarioRegistrador, string pDescripcion) {
+            return base.Channel.RegistrarRevisionColaboradorAsync(pIdMP, IdColaborador, pIdAtividad, pUsuarioRegistrador, pDescripcion);
+        }
+        
         public System.Data.DataSet ActualizarContrasenia(string usuario, string contraseña) {
             return base.Channel.ActualizarContrasenia(usuario, contraseña);
         }
         
         public System.Threading.Tasks.Task<System.Data.DataSet> ActualizarContraseniaAsync(string usuario, string contraseña) {
             return base.Channel.ActualizarContraseniaAsync(usuario, contraseña);
+        }
+        
+        public System.Data.DataSet CrearMuestreoPreliminar(string idMuestreo, string fechahora, string temperatura, string humedad) {
+            return base.Channel.CrearMuestreoPreliminar(idMuestreo, fechahora, temperatura, humedad);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> CrearMuestreoPreliminarAsync(string idMuestreo, string fechahora, string temperatura, string humedad) {
+            return base.Channel.CrearMuestreoPreliminarAsync(idMuestreo, fechahora, temperatura, humedad);
         }
     }
 }

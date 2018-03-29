@@ -38,7 +38,7 @@ namespace Sistema_Muestreos
 
         protected void Button_CrearRevision_Click(object sender, EventArgs e)
         {
-            //Response.Redirect(".aspx");
+            Response.Redirect("MuestreoPreliminar.aspx");
         }
 
         protected void Button_Actividades_Click(object sender, EventArgs e)

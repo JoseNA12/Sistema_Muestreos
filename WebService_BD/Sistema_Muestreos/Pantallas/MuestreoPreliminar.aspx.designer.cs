@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Sistema_Muestreos.Pantallas {
+namespace Sistema_Muestreos {
     
     
-    public partial class CambiarContraseña {
+    public partial class MuestreoPeliminar {
         
         /// <summary>
         /// Control form1.
@@ -22,24 +22,6 @@ namespace Sistema_Muestreos.Pantallas {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control Label2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// Control Panel1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
-        
-        /// <summary>
         /// Control Label1.
         /// </summary>
         /// <remarks>
@@ -49,13 +31,13 @@ namespace Sistema_Muestreos.Pantallas {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control TextBox_Contrasenia_1.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Contrasenia_1;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
         /// Control Label3.
@@ -67,39 +49,39 @@ namespace Sistema_Muestreos.Pantallas {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control TextBox_Contrasenia_2.
+        /// Control TextBox_Humedad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Contrasenia_2;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Humedad;
         
         /// <summary>
-        /// Control CheckBox_EstasSeguro.
+        /// Control TextBox_Temperatura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox_EstasSeguro;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Temperatura;
         
         /// <summary>
-        /// Control Button_CambiarContraseña.
+        /// Control Button_Crear.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_CambiarContraseña;
+        protected global::System.Web.UI.WebControls.Button Button_Crear;
         
         /// <summary>
-        /// Control Button_Atras.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Atras;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

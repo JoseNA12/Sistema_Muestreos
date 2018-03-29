@@ -74,6 +74,7 @@
     <Content Include="Pantallas\AgregarColaborador.aspx" />
     <Content Include="Pantallas\CambiarContraseña.aspx" />
     <Content Include="Pantallas\CSS\Button2.css" />
+    <Content Include="Pantallas\DefinirHorasLibres.aspx" />
     <Content Include="Pantallas\Img\Backgrounds.jpg" />
     <Content Include="Pantallas\Colaboradores.aspx" />
     <Content Include="Pantallas\CrearActividad.aspx" />
@@ -84,7 +85,7 @@
     <Content Include="Pantallas\MainAdministrador.aspx" />
     <Content Include="Pantallas\ModificarActividad.aspx" />
     <Content Include="Pantallas\MuestreoPreliminar2.aspx" />
-    <Content Include="Pantallas\MuestreoPeliminar.aspx" />
+    <Content Include="Pantallas\MuestreoPreliminar.aspx" />
     <Content Include="Pantallas\Muestreo.aspx" />
     <Content Include="Pantallas\NuevoMuestreo.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
@@ -154,6 +155,13 @@
     <Compile Include="Pantallas\CrearUsuario.aspx.designer.cs">
       <DependentUpon>CrearUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\DefinirHorasLibres.aspx.cs">
+      <DependentUpon>DefinirHorasLibres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\DefinirHorasLibres.aspx.designer.cs">
+      <DependentUpon>DefinirHorasLibres.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\IniciarSesion.aspx.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -182,12 +190,12 @@
     <Compile Include="Pantallas\MuestreoPreliminar2.aspx.designer.cs">
       <DependentUpon>MuestreoPreliminar2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\MuestreoPeliminar.aspx.cs">
-      <DependentUpon>MuestreoPeliminar.aspx</DependentUpon>
+    <Compile Include="Pantallas\MuestreoPreliminar.aspx.cs">
+      <DependentUpon>MuestreoPreliminar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pantallas\MuestreoPeliminar.aspx.designer.cs">
-      <DependentUpon>MuestreoPeliminar.aspx</DependentUpon>
+    <Compile Include="Pantallas\MuestreoPreliminar.aspx.designer.cs">
+      <DependentUpon>MuestreoPreliminar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\Muestreo.aspx.cs">
       <DependentUpon>Muestreo.aspx</DependentUpon>
