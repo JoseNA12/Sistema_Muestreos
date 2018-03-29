@@ -34,37 +34,39 @@ namespace Sistema_Muestreos
         {
             int temp;
 
-            if (!TextBox_RangoInicial.Text.Equals("") && !TextBox_RangoFinal.Text.Equals("") &&
-                int.TryParse(TextBox_RangoInicial.Text, out temp) && int.TryParse(TextBox_RangoFinal.Text, out temp))
-            {
-                string tiempoExtra = TextBox_LapsoExtra.Text;
 
-                if ((!TextBox_LapsoExtra.Text.Equals("") && int.TryParse(TextBox_LapsoExtra.Text, out temp))
-                    || TextBox_LapsoExtra.Text.Equals(""))
-                {
+            if (CheckBox1_LapsoAleatorio.Checked)
+            {
+                if (!TextBox_LapsoExtra.Text.Equals("") && int.TryParse(TextBox_LapsoExtra.Text, out temp) || TextBox_LapsoExtra.Text.Equals(""))
                     Response.Redirect("NuevoMuestreo.aspx?" +
-                            "RangoInicial=" + TextBox_RangoInicial.Text + "&" +
-                            "RangoFinal=" + TextBox_RangoFinal.Text + "&" +
-                            "TiempoExtra=" + TextBox_LapsoExtra.Text + "&" +
-                            "TiempoAleatorio=False");
-                }
+                                "TiempoExtra=" + TextBox_LapsoExtra.Text + "&" +
+                                "TiempoAleatorio=True");
                 else
                 {
-                    MessageBox("Formato inválido en los rangos de tiempo.");
-                }    
+                    MessageBox("Formato inválido del lapso de tiempo.");
+                }
             }
             else
             {
-                if (CheckBox1_LapsoAleatorio.Checked)
+                if (!TextBox_RangoInicial.Text.Equals("") && !TextBox_RangoFinal.Text.Equals("") &&
+                    int.TryParse(TextBox_RangoInicial.Text, out temp) && int.TryParse(TextBox_RangoFinal.Text, out temp))
                 {
-                        if (!TextBox_LapsoExtra.Text.Equals("") && int.TryParse(TextBox_LapsoExtra.Text, out temp) || TextBox_LapsoExtra.Text.Equals(""))
-                            Response.Redirect("NuevoMuestreo.aspx?" +
-                                        "TiempoExtra=" + TextBox_LapsoExtra.Text + "&" +
-                                        "TiempoAleatorio=True");
-                        else
-                        {
-                            MessageBox("Formato inválido del lapso de tiempo.");
-                        }
+                    string tiempoExtra = TextBox_LapsoExtra.Text;
+
+                    if ((!TextBox_LapsoExtra.Text.Equals("") && int.TryParse(TextBox_LapsoExtra.Text, out temp))
+                        || TextBox_LapsoExtra.Text.Equals(""))
+                    {
+                        Response.Redirect("NuevoMuestreo.aspx?" +
+                                "RangoInicial=" + TextBox_RangoInicial.Text + "&" +
+                                "RangoFinal=" + TextBox_RangoFinal.Text + "&" +
+                                "TiempoExtra=" + TextBox_LapsoExtra.Text + "&" +
+                                "TiempoAleatorio=False");
+                    }
+                    else
+                    {
+                        MessageBox("Formato inválido en los rangos de tiempo.");
+                    }
+
                 }
                 else
                 {

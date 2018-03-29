@@ -17,24 +17,24 @@
             <br />
             <asp:Panel ID="Panel1" runat="server" Font-Names="Microsoft Sans Serif" Height="431px" HorizontalAlign="Center">
                 <br />
-                <asp:Label ID="Label6" runat="server" Text="Hora inicial (24h)"></asp:Label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label7" runat="server" Font-Names="Microsoft Sans Serif" Text="Hora final (24h)"></asp:Label>
+                <asp:Label ID="Label6" runat="server" Text="Hora inicial"></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label7" runat="server" Font-Names="Microsoft Sans Serif" Text="Hora final"></asp:Label>
                 <br />
-                <asp:TextBox ID="TextBox_HoraInicial" runat="server" Width="46px" Font-Names="Microsoft Sans Serif" Font-Size="Medium" Height="30px" MaxLength="2" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="TextBox_HoraInicial" runat="server" Width="120px" Font-Names="Microsoft Sans Serif" Font-Size="Medium" Height="30px" MaxLength="2" TextMode="Time"></asp:TextBox>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox_HoraFinal" runat="server" Width="46px" Font-Names="Microsoft Sans Serif" Font-Size="Medium" Height="30px" MaxLength="2" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="TextBox_HoraFinal" runat="server" Width="120px" Font-Names="Microsoft Sans Serif" Font-Size="Medium" Height="30px" MaxLength="2" TextMode="Time"></asp:TextBox>
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
                 <br />
                 <asp:Label ID="Label8" runat="server" Font-Names="Microsoft Sans Serif" Text="Horas establecidas"></asp:Label>
                 <br />
-                <asp:ListBox ID="ListBox_HorasLibresDefinidas" runat="server" Font-Names="Microsoft Sans Serif" Height="201px" Width="187px"></asp:ListBox>
+                <asp:ListBox ID="ListBox_HorasLibresDefinidas" runat="server" Font-Names="Microsoft Sans Serif" Height="201px" Width="187px" OnSelectedIndexChanged="ListBox_HorasLibresDefinidas_SelectedIndexChanged"></asp:ListBox>
                 <br />
                 <br />
-                <asp:Button ID="Button_AgregarHoraLibre" runat="server" Height="38px" Text="Agregar hora" Width="102px" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button1" runat="server" Height="38px" Text="Eliminar hora" />
+                <asp:Button ID="Button_AgregarHoraLibre" runat="server" Height="38px" Text="Agregar hora" Width="102px" OnClick="Button_AgregarHoraLibre_Click" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button_EliminarHora" runat="server" Height="38px" Text="Eliminar hora" OnClick="Button1_Click" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Button_Atras" runat="server" Height="38px" Text="Atras" Width="69px" OnClick="Button_Atras_Click" />
             </asp:Panel>

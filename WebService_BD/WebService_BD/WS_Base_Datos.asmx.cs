@@ -323,7 +323,7 @@ namespace WebService_BD
         }
 
         [WebMethod]
-        public DataSet BuscarHorasNoLaborables(int idHora)
+        public DataSet BorrarHorasNoLaborables(int idHora)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
             conn.Open();
@@ -334,5 +334,99 @@ namespace WebService_BD
             da.Fill(ds);
             return ds;
         }
+
+        [WebMethod]
+        public DataSet CrearMuestreo(string fechaHoraInicio, int lapsoRandomInicio, int lapsoRandomFinal, string descripcion, string adm, string nombre)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoInsert", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@FechaHoraInicio", fechaHoraInicio); // datetime
+            da.SelectCommand.Parameters.AddWithValue("@LapsoRandomInicio", lapsoRandomInicio); // int
+            da.SelectCommand.Parameters.AddWithValue("@LapsoRandomFinal", lapsoRandomFinal); // int
+            //da.SelectCommand.Parameters.AddWithValue("@FechaHoraFinalizacion", null); // datetime
+            da.SelectCommand.Parameters.AddWithValue("@EstadoMuestreo", 2); //// int
+            da.SelectCommand.Parameters.AddWithValue("@Descripcion", descripcion); // nvarchar
+            da.SelectCommand.Parameters.AddWithValue("@Administrador", adm); // nvarchar
+            da.SelectCommand.Parameters.AddWithValue("@Estado", 1); // bit
+            da.SelectCommand.Parameters.AddWithValue("@Nombre", nombre); // nvarchar
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet FinalizarMuestreo(string idMuestreo, string fechaHoraFinal)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoUpdate", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", idMuestreo);
+            da.SelectCommand.Parameters.AddWithValue("@FechaHoraFinalizacion", fechaHoraFinal);
+            da.SelectCommand.Parameters.AddWithValue("@EstadoMuestreo", 1);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+
+        [WebMethod]
+        public DataSet EliminarMuestreo(string idMuestreo)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoDelete", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", idMuestreo);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet BuscarUltimoMuestreo()
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoSelect", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        //retornaIdHoraNoLaboral
+        [WebMethod]
+        public DataSet BuscarIdHoraNoLaboral(string horaInicio, string horaFinal)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("retornaIdHoraNoLaboral", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@horaInicio", horaInicio);
+            da.SelectCommand.Parameters.AddWithValue("@horaFinal", horaFinal);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet AniadirHoraNoLaboral(int IdMuestreo, string horaInicio, string horaFinal)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoHoraDescansoInsert", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", IdMuestreo);
+            da.SelectCommand.Parameters.AddWithValue("@HoraInicio", horaInicio);
+            da.SelectCommand.Parameters.AddWithValue("@HoraFinal", horaFinal);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+
     }
 }

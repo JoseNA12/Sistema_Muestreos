@@ -127,6 +127,62 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarHorasNoLaborables", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> InsertarHorasNoLaborablesAsync(string idmuestreo, string horaDescanso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarHorasNoLaborables", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet BuscarHorasNoLaborables();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarHorasNoLaborables", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> BuscarHorasNoLaborablesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BorrarHorasNoLaborables", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet BorrarHorasNoLaborables(int idHora);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BorrarHorasNoLaborables", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> BorrarHorasNoLaborablesAsync(int idHora);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearMuestreo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet CrearMuestreo(string fechaHoraInicio, int lapsoRandomInicio, int lapsoRandomFinal, string descripcion, string adm, string nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearMuestreo", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> CrearMuestreoAsync(string fechaHoraInicio, int lapsoRandomInicio, int lapsoRandomFinal, string descripcion, string adm, string nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FinalizarMuestreo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet FinalizarMuestreo(string idMuestreo, string fechaHoraFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FinalizarMuestreo", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> FinalizarMuestreoAsync(string idMuestreo, string fechaHoraFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarMuestreo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet EliminarMuestreo(string idMuestreo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarMuestreo", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> EliminarMuestreoAsync(string idMuestreo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarUltimoMuestreo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet BuscarUltimoMuestreo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarUltimoMuestreo", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> BuscarUltimoMuestreoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarIdHoraNoLaboral", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet BuscarIdHoraNoLaboral(string horaInicio, string horaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarIdHoraNoLaboral", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> BuscarIdHoraNoLaboralAsync(string horaInicio, string horaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AniadirHoraNoLaboral", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet AniadirHoraNoLaboral(int IdMuestreo, string horaInicio, string horaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AniadirHoraNoLaboral", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> AniadirHoraNoLaboralAsync(int IdMuestreo, string horaInicio, string horaFinal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -282,6 +338,70 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> InsertarHorasNoLaborablesAsync(string idmuestreo, string horaDescanso) {
             return base.Channel.InsertarHorasNoLaborablesAsync(idmuestreo, horaDescanso);
+        }
+        
+        public System.Data.DataSet BuscarHorasNoLaborables() {
+            return base.Channel.BuscarHorasNoLaborables();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> BuscarHorasNoLaborablesAsync() {
+            return base.Channel.BuscarHorasNoLaborablesAsync();
+        }
+        
+        public System.Data.DataSet BorrarHorasNoLaborables(int idHora) {
+            return base.Channel.BorrarHorasNoLaborables(idHora);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> BorrarHorasNoLaborablesAsync(int idHora) {
+            return base.Channel.BorrarHorasNoLaborablesAsync(idHora);
+        }
+        
+        public System.Data.DataSet CrearMuestreo(string fechaHoraInicio, int lapsoRandomInicio, int lapsoRandomFinal, string descripcion, string adm, string nombre) {
+            return base.Channel.CrearMuestreo(fechaHoraInicio, lapsoRandomInicio, lapsoRandomFinal, descripcion, adm, nombre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> CrearMuestreoAsync(string fechaHoraInicio, int lapsoRandomInicio, int lapsoRandomFinal, string descripcion, string adm, string nombre) {
+            return base.Channel.CrearMuestreoAsync(fechaHoraInicio, lapsoRandomInicio, lapsoRandomFinal, descripcion, adm, nombre);
+        }
+        
+        public System.Data.DataSet FinalizarMuestreo(string idMuestreo, string fechaHoraFinal) {
+            return base.Channel.FinalizarMuestreo(idMuestreo, fechaHoraFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> FinalizarMuestreoAsync(string idMuestreo, string fechaHoraFinal) {
+            return base.Channel.FinalizarMuestreoAsync(idMuestreo, fechaHoraFinal);
+        }
+        
+        public System.Data.DataSet EliminarMuestreo(string idMuestreo) {
+            return base.Channel.EliminarMuestreo(idMuestreo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> EliminarMuestreoAsync(string idMuestreo) {
+            return base.Channel.EliminarMuestreoAsync(idMuestreo);
+        }
+        
+        public System.Data.DataSet BuscarUltimoMuestreo() {
+            return base.Channel.BuscarUltimoMuestreo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> BuscarUltimoMuestreoAsync() {
+            return base.Channel.BuscarUltimoMuestreoAsync();
+        }
+        
+        public System.Data.DataSet BuscarIdHoraNoLaboral(string horaInicio, string horaFinal) {
+            return base.Channel.BuscarIdHoraNoLaboral(horaInicio, horaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> BuscarIdHoraNoLaboralAsync(string horaInicio, string horaFinal) {
+            return base.Channel.BuscarIdHoraNoLaboralAsync(horaInicio, horaFinal);
+        }
+        
+        public System.Data.DataSet AniadirHoraNoLaboral(int IdMuestreo, string horaInicio, string horaFinal) {
+            return base.Channel.AniadirHoraNoLaboral(IdMuestreo, horaInicio, horaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> AniadirHoraNoLaboralAsync(int IdMuestreo, string horaInicio, string horaFinal) {
+            return base.Channel.AniadirHoraNoLaboralAsync(IdMuestreo, horaInicio, horaFinal);
         }
     }
 }
