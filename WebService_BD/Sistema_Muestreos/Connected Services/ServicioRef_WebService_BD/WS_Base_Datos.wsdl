@@ -31,6 +31,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="pApellidos" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pCorreoElectronico" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pNombreUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pContrasenia" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="pIdTipoUsuario" type="s:int" />
           </s:sequence>
         </s:complexType>

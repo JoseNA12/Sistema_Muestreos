@@ -25,10 +25,10 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarNuevoUsuario", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet RegistrarNuevoUsuario(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, int pIdTipoUsuario);
+        System.Data.DataSet RegistrarNuevoUsuario(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, string pContrasenia, int pIdTipoUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarNuevoUsuario", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> RegistrarNuevoUsuarioAsync(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, int pIdTipoUsuario);
+        System.Threading.Tasks.Task<System.Data.DataSet> RegistrarNuevoUsuarioAsync(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, string pContrasenia, int pIdTipoUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerActividades", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -136,12 +136,12 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
             return base.Channel.VerificarCredencialesAsync(pNombreUsuario, pContrasenia);
         }
         
-        public System.Data.DataSet RegistrarNuevoUsuario(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, int pIdTipoUsuario) {
-            return base.Channel.RegistrarNuevoUsuario(pNombre, pApellidos, pCorreoElectronico, pNombreUsuario, pIdTipoUsuario);
+        public System.Data.DataSet RegistrarNuevoUsuario(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, string pContrasenia, int pIdTipoUsuario) {
+            return base.Channel.RegistrarNuevoUsuario(pNombre, pApellidos, pCorreoElectronico, pNombreUsuario, pContrasenia, pIdTipoUsuario);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> RegistrarNuevoUsuarioAsync(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, int pIdTipoUsuario) {
-            return base.Channel.RegistrarNuevoUsuarioAsync(pNombre, pApellidos, pCorreoElectronico, pNombreUsuario, pIdTipoUsuario);
+        public System.Threading.Tasks.Task<System.Data.DataSet> RegistrarNuevoUsuarioAsync(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, string pContrasenia, int pIdTipoUsuario) {
+            return base.Channel.RegistrarNuevoUsuarioAsync(pNombre, pApellidos, pCorreoElectronico, pNombreUsuario, pContrasenia, pIdTipoUsuario);
         }
         
         public System.Data.DataSet ObtenerActividades() {

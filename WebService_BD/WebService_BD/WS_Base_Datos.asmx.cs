@@ -41,19 +41,6 @@ namespace WebService_BD
             return ds;
         }*/
 
-        private string generarContraseniaTemporal()
-        {
-            Random rnd = new Random();
-            int numero;
-            string contraseñaGenerada = "";
-            while (contraseñaGenerada.Length < 5)
-            {
-                numero = rnd.Next(0, 9);
-                contraseñaGenerada += numero.ToString();
-            }
-            return contraseñaGenerada;
-        }
-
         [WebMethod]
         public DataSet VerificarCredenciales(string pNombreUsuario, string pContrasenia) // Funcion que devuelve un valor/respuesta proveniente de la BD
         {
@@ -73,7 +60,7 @@ namespace WebService_BD
         }
 
         [WebMethod]
-        public DataSet RegistrarNuevoUsuario(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, int pIdTipoUsuario)
+        public DataSet RegistrarNuevoUsuario(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, string pContrasenia, int pIdTipoUsuario)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
             conn.Open();
@@ -87,8 +74,6 @@ namespace WebService_BD
             da.SelectCommand.Parameters.AddWithValue("@Usuario", pNombreUsuario);
             da.SelectCommand.Parameters.AddWithValue("@IdTipoUsuario", pIdTipoUsuario);
             da.SelectCommand.Parameters.AddWithValue("@Estado", 1);
-
-            string pContrasenia = generarContraseniaTemporal();
             da.SelectCommand.Parameters.AddWithValue("@Contraseña", pContrasenia);
 
             DataSet ds = new DataSet();
