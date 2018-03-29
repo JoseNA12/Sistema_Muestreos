@@ -42,48 +42,42 @@ namespace Sistema_Muestreos
                 }
                 catch
                 {
-                    MessageBox("Hubo un error cargando los colaboradores!.");
+                    MessageBox("Hubo un error cargando la información, reintente nuevamente!.");
                 }
             }
         }
 
         protected void Button_RegistrarActividad_Click(object sender, EventArgs e)
         {
-            if (!TextBox_Descripcion.Text.Equals(""))
+            string colaboradorSeleccionado = DropDownList_Colaboradores.SelectedValue;
+            string actividadSeleccionada = DropDownList_Actividades.SelectedValue;
+            string descripcion = TextBox_Descripcion.Text;
+
+            if (!BuscarColaborador(colaboradorSeleccionado))
             {
-                string colaboradorSeleccionado = DropDownList_Colaboradores.SelectedValue;
-                string actividadSeleccionada = DropDownList_Actividades.SelectedValue;
-                string descripcion = TextBox_Descripcion.Text;
+                ListItem item = new ListItem();
+                item.Value = colaboradorSeleccionado;
+                item.Text = colaboradorSeleccionado + " -> " + actividadSeleccionada;
+                ListBox_Registro.Items.Add(item);
 
-                if (!BuscarColaborador(colaboradorSeleccionado))
-                {
-                    ListItem item = new ListItem();
-                    item.Value = colaboradorSeleccionado;
-                    item.Text = colaboradorSeleccionado + " -> " + actividadSeleccionada;
-                    ListBox_Registro.Items.Add(item);
+                ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
+                DataSet ds = WS.ObtenerMuestreoPreliminarId();
+                DataTable tablaMuestroPreliminarId = ds.Tables[0];
 
-                    ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
-                    DataSet ds = WS.ObtenerMuestreoPreliminarId();
-                    DataTable tablaMuestroPreliminarId = ds.Tables[0];
+                DataSet ds_2 = WS.ObtenerActividad(actividadSeleccionada);
+                DataTable tablaActividad = ds_2.Tables[0];
 
-                    DataSet ds_2 = WS.ObtenerActividad(actividadSeleccionada);
-                    DataTable tablaActividad = ds_2.Tables[0];
-                     
-                    DataSet ds_1 = WS.RegistrarRevisionColaborador(Int32.Parse(tablaMuestroPreliminarId.Rows[0][0].ToString()), 
-                        colaboradorSeleccionado, Int32.Parse(tablaActividad.Rows[0][2].ToString()), IniciarSesion.usuarioActual[0].ToString(), descripcion);
+                DataSet ds_1 = WS.RegistrarRevisionColaborador(Int32.Parse(tablaMuestroPreliminarId.Rows[0][0].ToString()),
+                    colaboradorSeleccionado, Int32.Parse(tablaActividad.Rows[0][2].ToString()), IniciarSesion.usuarioActual[0].ToString(), descripcion);
 
-                    MessageBox("Se ha registrado la revisión para " + colaboradorSeleccionado);
-                }
-                else
-                {
-                    MessageBox("Ya se ha registrado el colaborador.");
-                }    
+                MessageBox("Se ha registrado la revisión para " + colaboradorSeleccionado);
             }
             else
             {
-                MessageBox("Complete el campo de la descripción.");
+                MessageBox("Ya se ha registrado el colaborador.");
             }
         }
+        
 
         private bool BuscarColaborador(string pNombre)
         {

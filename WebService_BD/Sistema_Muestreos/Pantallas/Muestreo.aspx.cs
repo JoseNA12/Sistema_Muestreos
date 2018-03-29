@@ -32,33 +32,43 @@ namespace Sistema_Muestreos
 
         protected void Button_NuevoMuestreo_Click(object sender, EventArgs e)
         {
-            if (!TextBox_LapsePersonalizado.Text.Equals(""))
+            int temp;
+
+            if (!TextBox_RangoInicial.Text.Equals("") && !TextBox_RangoFinal.Text.Equals("") &&
+                int.TryParse(TextBox_RangoInicial.Text, out temp) && int.TryParse(TextBox_RangoFinal.Text, out temp))
             {
-                try
+                string tiempoExtra = TextBox_LapsoExtra.Text;
+
+                if ((!TextBox_LapsoExtra.Text.Equals("") && int.TryParse(TextBox_LapsoExtra.Text, out temp))
+                    || TextBox_LapsoExtra.Text.Equals(""))
                 {
-                    int minutos = Int32.Parse(TextBox_LapsePersonalizado.Text);
-
-                    DateTime horaActual = DateTime.Now;
-                    DateTime horaMasLapso = horaActual.AddMinutes(minutos);
-
-                    //DateTime.Now.ToLongTimeString() + TextBox_LapsePersonalizado.Text;
-
+                    Response.Redirect("NuevoMuestreo.aspx?" +
+                            "RangoInicial=" + TextBox_RangoInicial.Text + "&" +
+                            "RangoFinal=" + TextBox_RangoFinal.Text + "&" +
+                            "TiempoExtra=" + TextBox_LapsoExtra.Text + "&" +
+                            "TiempoAleatorio=False");
                 }
-                catch
+                else
                 {
-                    MessageBox("Formato inválido del lapso de tiempo.");
-                }
-                
+                    MessageBox("Formato inválido en los rangos de tiempo.");
+                }    
             }
             else
             {
                 if (CheckBox1_LapsoAleatorio.Checked)
                 {
-
+                        if (!TextBox_LapsoExtra.Text.Equals("") && int.TryParse(TextBox_LapsoExtra.Text, out temp) || TextBox_LapsoExtra.Text.Equals(""))
+                            Response.Redirect("NuevoMuestreo.aspx?" +
+                                        "TiempoExtra=" + TextBox_LapsoExtra.Text + "&" +
+                                        "TiempoAleatorio=True");
+                        else
+                        {
+                            MessageBox("Formato inválido del lapso de tiempo.");
+                        }
                 }
                 else
                 {
-                    MessageBox("Indique el lapso de tiempo que se desea manejar.");
+                    MessageBox("Indique el lapso de tiempo que se desea manejar o verifique que los rangos ingresados sean numeros enteros.");
                 }
             }
             

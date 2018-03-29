@@ -16,12 +16,12 @@ namespace Sistema_Muestreos
 
         protected void Button_CrearMuestreo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Muestreo.aspx");
+            //Response.Redirect("Muestreo.aspx");
         }
 
         protected void Button_CancelarNuevoMuestreo_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Muestreo.aspx");
         }
     }
 }

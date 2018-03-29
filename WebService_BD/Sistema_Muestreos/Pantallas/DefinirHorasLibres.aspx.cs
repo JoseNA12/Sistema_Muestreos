@@ -11,7 +11,7 @@ namespace Sistema_Muestreos.Pantallas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Button_Atras_Click(object sender, EventArgs e)

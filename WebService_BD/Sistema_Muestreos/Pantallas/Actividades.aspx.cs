@@ -59,12 +59,13 @@ namespace Sistema_Muestreos
                 if (!ds.Tables[0].Rows[0].Equals("error"))
                 {
                     MessageBox("Se ha eliminado la actividad correctamente.");
-                    Response.Redirect(Request.Url.AbsoluteUri); // Refrescar la pagina actual
+                    
                 }
                 else
                 {
                     MessageBox("Error al eliminar");
                 }
+                Response.Redirect(Request.Url.AbsoluteUri); // Refrescar la pagina actual
             }
         }
 

@@ -120,6 +120,13 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearMuestreoPreliminar", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> CrearMuestreoPreliminarAsync(string idMuestreo, string fechahora, string temperatura, string humedad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarHorasNoLaborables", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet InsertarHorasNoLaborables(string idmuestreo, string horaDescanso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarHorasNoLaborables", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> InsertarHorasNoLaborablesAsync(string idmuestreo, string horaDescanso);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -267,6 +274,14 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> CrearMuestreoPreliminarAsync(string idMuestreo, string fechahora, string temperatura, string humedad) {
             return base.Channel.CrearMuestreoPreliminarAsync(idMuestreo, fechahora, temperatura, humedad);
+        }
+        
+        public System.Data.DataSet InsertarHorasNoLaborables(string idmuestreo, string horaDescanso) {
+            return base.Channel.InsertarHorasNoLaborables(idmuestreo, horaDescanso);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> InsertarHorasNoLaborablesAsync(string idmuestreo, string horaDescanso) {
+            return base.Channel.InsertarHorasNoLaborablesAsync(idmuestreo, horaDescanso);
         }
     }
 }

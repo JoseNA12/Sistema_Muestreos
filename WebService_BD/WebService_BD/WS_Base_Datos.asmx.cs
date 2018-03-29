@@ -295,5 +295,19 @@ namespace WebService_BD
             da.Fill(ds);
             return ds;
         }
+
+        [WebMethod]
+        public DataSet InsertarHorasNoLaborables(string idmuestreo, string horaDescanso)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoHoraDescansoInsert", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", idmuestreo);
+            da.SelectCommand.Parameters.AddWithValue("@HoraDescanso", horaDescanso);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
     }
 }

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<body style="margin: auto; background-image: url('Img/Background_2.jpg'); width: 540px; position:center; height: 505px;">
+<body style="margin: auto; background-image: url('Img/Background_2.jpg'); width: 540px; position:center; height: 520px;">
     <form id="form1" runat="server">
         <div>
             <br />
@@ -15,15 +15,15 @@
             <asp:Label ID="Label5" runat="server" Font-Names="Microsoft Sans Serif" ForeColor="White" Text="Definir horas libres" Font-Size="X-Large"></asp:Label>
             <br />
             <br />
-            <asp:Panel ID="Panel1" runat="server" Font-Names="Microsoft Sans Serif" Height="405px" HorizontalAlign="Center">
+            <asp:Panel ID="Panel1" runat="server" Font-Names="Microsoft Sans Serif" Height="431px" HorizontalAlign="Center">
                 <br />
-                <asp:Label ID="Label6" runat="server" Text="Hora inicial"></asp:Label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label7" runat="server" Font-Names="Microsoft Sans Serif" Text="Hora final"></asp:Label>
-                <br />
-                <asp:TextBox ID="TextBox_HoraInicial" runat="server" Width="100px"></asp:TextBox>
+                <asp:Label ID="Label6" runat="server" Text="Hora inicial (24h)"></asp:Label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox_HoraFinal" runat="server" Width="100px"></asp:TextBox>
+                <asp:Label ID="Label7" runat="server" Font-Names="Microsoft Sans Serif" Text="Hora final (24h)"></asp:Label>
+                <br />
+                <asp:TextBox ID="TextBox_HoraInicial" runat="server" Width="46px" Font-Names="Microsoft Sans Serif" Font-Size="Medium" Height="30px" MaxLength="2" TextMode="Number"></asp:TextBox>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="TextBox_HoraFinal" runat="server" Width="46px" Font-Names="Microsoft Sans Serif" Font-Size="Medium" Height="30px" MaxLength="2" TextMode="Number"></asp:TextBox>
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
@@ -33,8 +33,9 @@
                 <asp:ListBox ID="ListBox_HorasLibresDefinidas" runat="server" Font-Names="Microsoft Sans Serif" Height="201px" Width="187px"></asp:ListBox>
                 <br />
                 <br />
-                <asp:Button ID="Button_AgregarHoraLibre" runat="server" Height="38px" Text="Agregar hora" Width="95px" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Button_AgregarHoraLibre" runat="server" Height="38px" Text="Agregar hora" Width="102px" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button1" runat="server" Height="38px" Text="Eliminar hora" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Button_Atras" runat="server" Height="38px" Text="Atras" Width="69px" OnClick="Button_Atras_Click" />
             </asp:Panel>
         </div>

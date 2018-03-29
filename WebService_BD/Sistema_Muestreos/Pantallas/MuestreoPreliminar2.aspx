@@ -20,19 +20,19 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="Label3" runat="server" Font-Names="Microsoft Sans Serif" Text="Actividades"></asp:Label>
                 <br />
-                <asp:DropDownList ID="DropDownList_Colaboradores" runat="server" Height="21px" Width="200px">
+                <asp:DropDownList ID="DropDownList_Colaboradores" runat="server" Height="21px" Width="200px" Font-Names="Microsoft Sans Serif">
                 </asp:DropDownList>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:DropDownList ID="DropDownList_Actividades" runat="server" Height="21px" Width="200px">
+                <asp:DropDownList ID="DropDownList_Actividades" runat="server" Height="21px" Width="200px" Font-Names="Microsoft Sans Serif">
                 </asp:DropDownList>
                 <br />
                 <br />
                 <asp:Label ID="Label4" runat="server" Font-Names="Microsoft Sans Serif" Text="Descripcion"></asp:Label>
                 <br />
-                <asp:TextBox ID="TextBox_Descripcion" runat="server" Width="289px" Height="48px" TextMode="MultiLine"></asp:TextBox>
+                <asp:TextBox ID="TextBox_Descripcion" runat="server" Width="289px" Height="48px" TextMode="MultiLine" Font-Names="Microsoft Sans Serif"></asp:TextBox>
                 <br />
                 <br />
-                <asp:ListBox ID="ListBox_Registro" runat="server" Height="202px" Width="557px">
+                <asp:ListBox ID="ListBox_Registro" runat="server" Height="202px" Width="557px" Font-Names="Microsoft Sans Serif">
                 </asp:ListBox>
                 <br />
                 <br />
