@@ -71,8 +71,6 @@ namespace Sistema_Muestreos
                     MessageBox("Indique el lapso de tiempo que se desea manejar o verifique que los rangos ingresados sean numeros enteros.");
                 }
             }
-            
-            //Response.Redirect("NuevoMuestreo.aspx");
         }
 
         protected void Button_Atras_Click(object sender, EventArgs e)
