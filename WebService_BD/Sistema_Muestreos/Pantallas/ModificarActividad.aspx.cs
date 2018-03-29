@@ -30,9 +30,10 @@ namespace Sistema_Muestreos
 
                     foreach (ListItem item in DropDownList_TipoActividad.Items)
                     {
-                        if (row["IdTipoActividad"].ToString() == item.Text)
+                        if (row["IdTipoActividad"].ToString().Equals(item.Value))
                         {
                             DropDownList_TipoActividad.SelectedValue = item.Value;
+                            break;
                         }
                     }
 
