@@ -45,10 +45,9 @@ namespace Sistema_Muestreos
                     }
                     tiempoAleatorio = false;
                 }
-            }
-
-            
+            }    
         }
+
         protected void Button_CrearMuestreo_Click(object sender, EventArgs e)
         {
             if (!TextBox_NombreNuevoMuestreo.Text.Equals("") && !TextBox_DescripcionNuevoMuestreo.Text.Equals(""))
@@ -58,6 +57,15 @@ namespace Sistema_Muestreos
                 DataSet ds = WS.CrearMuestreo(DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.ToLongTimeString(),
                     rangoInicial, rangoFinal, TextBox_DescripcionNuevoMuestreo.Text, IniciarSesion.usuarioActual[0].ToString(),
                     TextBox_NombreNuevoMuestreo.Text);
+
+                Random rdn = new Random();
+                int miValor = rdn.Next(rangoInicial, rangoFinal + tiempoExtra + 1);
+
+                MessageBox(DateTime.Now.AddMinutes(miValor).ToLongTimeString());
+
+                WS.CrearMuestreoPreliminar(WS.BuscarUltimoMuestreo().Tables[0].Rows[0][0].ToString(),
+                    (DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.AddMinutes(miValor).ToLongTimeString()), 
+                    "", "");
 
                 MessageBox("El muestreo se ha creado correctamente!.");
             }
