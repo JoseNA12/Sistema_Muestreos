@@ -16,7 +16,12 @@ namespace Sistema_Muestreos
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            VerificarMuestreoTerminado();
 
+            if (Button_NuevoMuestreo.Enabled)
+            {
+                Button_FinalizarMuestreo.Enabled = false;
+            }
         }
 
 
@@ -27,14 +32,22 @@ namespace Sistema_Muestreos
 
         protected void Button_FinalizarMuestreo_Click(object sender, EventArgs e)
         {
+            ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
+            DataSet ds = WS.FinalizarMuestreo(WS.BuscarUltimoMuestreo().Tables[0].Rows[0][0].ToString(),
+                DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.ToLongTimeString());
 
+            MessageBox("El muestreo ha sido finalizado!.");
+            VerificarMuestreoTerminado();
+
+            WS.EliminarMuestreoPreliminar(WS.BuscarUltimoMuestreoPreliminar().Tables[0].Rows[0][0].ToString());
+
+            Response.Redirect(Request.Url.AbsoluteUri); // Refrescar la pagina actual
         }
 
         protected void Button_NuevoMuestreo_Click(object sender, EventArgs e)
         {
             int temp;
-
-
+            
             if (CheckBox1_LapsoAleatorio.Checked)
             {
                 if (!TextBox_LapsoExtra.Text.Equals("") && int.TryParse(TextBox_LapsoExtra.Text, out temp) || TextBox_LapsoExtra.Text.Equals(""))
@@ -66,7 +79,6 @@ namespace Sistema_Muestreos
                     {
                         MessageBox("Formato inválido en los rangos de tiempo.");
                     }
-
                 }
                 else
                 {
@@ -83,6 +95,29 @@ namespace Sistema_Muestreos
         protected void Button_ActualizarLapso_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void VerificarMuestreoTerminado()
+        {
+            ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
+            DataSet ds = WS.BuscarUltimoMuestreo();// = WS.CrearMuestreoPreliminar(NuevoMuestreo.muestreoActual[1].ToString(), DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.ToLongTimeString(), TextBox_Temperatura.Text, TextBox_Humedad.Text);
+
+            try
+            {
+                if (ds.Tables[0].Rows[0][5].Equals(2)) // Muestreo en proceso
+                {
+                    Button_NuevoMuestreo.Enabled = false;
+                }
+                else
+                {
+                    Button_NuevoMuestreo.Enabled = true;
+                }
+            }
+            catch
+            {
+                // no existen muestreos
+            }
+            
         }
 
         private void MessageBox(string msg)

@@ -513,6 +513,67 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ModificarMuestreoPreliminar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDMP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="temperatura" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="humedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarMuestreoPreliminarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModificarMuestreoPreliminarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarMuestreoPreliminar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idMuestreo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarMuestreoPreliminarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarMuestreoPreliminarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarUltimoMuestreoPreliminar">
+        <s:complexType />
+      </s:element>
+      <s:element name="BuscarUltimoMuestreoPreliminarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarUltimoMuestreoPreliminarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="VerificarCredencialesSoapIn">
@@ -659,6 +720,24 @@
   <wsdl:message name="AniadirHoraNoLaboralSoapOut">
     <wsdl:part name="parameters" element="tns:AniadirHoraNoLaboralResponse" />
   </wsdl:message>
+  <wsdl:message name="ModificarMuestreoPreliminarSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarMuestreoPreliminar" />
+  </wsdl:message>
+  <wsdl:message name="ModificarMuestreoPreliminarSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarMuestreoPreliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarMuestreoPreliminarSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarMuestreoPreliminar" />
+  </wsdl:message>
+  <wsdl:message name="EliminarMuestreoPreliminarSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarMuestreoPreliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUltimoMuestreoPreliminarSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarUltimoMuestreoPreliminar" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUltimoMuestreoPreliminarSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarUltimoMuestreoPreliminarResponse" />
+  </wsdl:message>
   <wsdl:portType name="WS_Base_DatosSoap">
     <wsdl:operation name="VerificarCredenciales">
       <wsdl:input message="tns:VerificarCredencialesSoapIn" />
@@ -755,6 +834,18 @@
     <wsdl:operation name="AniadirHoraNoLaboral">
       <wsdl:input message="tns:AniadirHoraNoLaboralSoapIn" />
       <wsdl:output message="tns:AniadirHoraNoLaboralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarMuestreoPreliminar">
+      <wsdl:input message="tns:ModificarMuestreoPreliminarSoapIn" />
+      <wsdl:output message="tns:ModificarMuestreoPreliminarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMuestreoPreliminar">
+      <wsdl:input message="tns:EliminarMuestreoPreliminarSoapIn" />
+      <wsdl:output message="tns:EliminarMuestreoPreliminarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUltimoMuestreoPreliminar">
+      <wsdl:input message="tns:BuscarUltimoMuestreoPreliminarSoapIn" />
+      <wsdl:output message="tns:BuscarUltimoMuestreoPreliminarSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WS_Base_DatosSoap" type="tns:WS_Base_DatosSoap">
@@ -975,6 +1066,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ModificarMuestreoPreliminar">
+      <soap:operation soapAction="http://tempuri.org/ModificarMuestreoPreliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMuestreoPreliminar">
+      <soap:operation soapAction="http://tempuri.org/EliminarMuestreoPreliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUltimoMuestreoPreliminar">
+      <soap:operation soapAction="http://tempuri.org/BuscarUltimoMuestreoPreliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WS_Base_DatosSoap12" type="tns:WS_Base_DatosSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1187,6 +1305,33 @@
     </wsdl:operation>
     <wsdl:operation name="AniadirHoraNoLaboral">
       <soap12:operation soapAction="http://tempuri.org/AniadirHoraNoLaboral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarMuestreoPreliminar">
+      <soap12:operation soapAction="http://tempuri.org/ModificarMuestreoPreliminar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMuestreoPreliminar">
+      <soap12:operation soapAction="http://tempuri.org/EliminarMuestreoPreliminar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUltimoMuestreoPreliminar">
+      <soap12:operation soapAction="http://tempuri.org/BuscarUltimoMuestreoPreliminar" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -77,7 +77,7 @@ namespace Sistema_Muestreos
                 MessageBox("Ya se ha registrado el colaborador.");
             }
         }
-        
+
 
         private bool BuscarColaborador(string pNombre)
         {
@@ -100,6 +100,19 @@ namespace Sistema_Muestreos
         protected void Button_Finalizar_Click(object sender, EventArgs e)
         {
 
+            ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
+            DataSet ds = WS.BuscarUltimoMuestreo();
+
+            Random rdn = new Random();
+            int miValor = rdn.Next(Int32.Parse(ds.Tables[0].Rows[0][2].ToString()), Int32.Parse(ds.Tables[0].Rows[0][3].ToString()) + 1);
+
+            WS.CrearMuestreoPreliminar(WS.BuscarUltimoMuestreo().Tables[0].Rows[0][0].ToString(),
+                (DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.AddMinutes(miValor).ToLongTimeString()),
+                "", "");
+
+            MessageBox("Se ha finalizado correctamente el muestreo preliminar!.");
+
+            Response.Redirect("MainAdministrador.aspx");
         }
     }
 }

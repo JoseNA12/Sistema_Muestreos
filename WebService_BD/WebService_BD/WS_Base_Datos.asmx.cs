@@ -427,6 +427,47 @@ namespace WebService_BD
             return ds;
         }
 
+        [WebMethod]
+        public DataSet ModificarMuestreoPreliminar(string IDMP, string temperatura, string humedad)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoPreliminarUpdate", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@IdMP", IDMP);
+            //    da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", );
+            //    da.SelectCommand.Parameters.AddWithValue("@FechaHora", fechahora);
+            da.SelectCommand.Parameters.AddWithValue("@Humedad", humedad);
+            da.SelectCommand.Parameters.AddWithValue("@Temperatura", temperatura);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
 
+        [WebMethod]
+        public DataSet EliminarMuestreoPreliminar(string idMuestreo)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoPreliminarDelete", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@IdMP", idMuestreo);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+
+        [WebMethod]
+        public DataSet BuscarUltimoMuestreoPreliminar()
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoPreliminarSelect", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
     }
 }

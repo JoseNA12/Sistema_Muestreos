@@ -183,6 +183,27 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AniadirHoraNoLaboral", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> AniadirHoraNoLaboralAsync(int IdMuestreo, string horaInicio, string horaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarMuestreoPreliminar", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ModificarMuestreoPreliminar(string IDMP, string temperatura, string humedad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarMuestreoPreliminar", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ModificarMuestreoPreliminarAsync(string IDMP, string temperatura, string humedad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarMuestreoPreliminar", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet EliminarMuestreoPreliminar(string idMuestreo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarMuestreoPreliminar", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> EliminarMuestreoPreliminarAsync(string idMuestreo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarUltimoMuestreoPreliminar", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet BuscarUltimoMuestreoPreliminar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarUltimoMuestreoPreliminar", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> BuscarUltimoMuestreoPreliminarAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -402,6 +423,30 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> AniadirHoraNoLaboralAsync(int IdMuestreo, string horaInicio, string horaFinal) {
             return base.Channel.AniadirHoraNoLaboralAsync(IdMuestreo, horaInicio, horaFinal);
+        }
+        
+        public System.Data.DataSet ModificarMuestreoPreliminar(string IDMP, string temperatura, string humedad) {
+            return base.Channel.ModificarMuestreoPreliminar(IDMP, temperatura, humedad);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> ModificarMuestreoPreliminarAsync(string IDMP, string temperatura, string humedad) {
+            return base.Channel.ModificarMuestreoPreliminarAsync(IDMP, temperatura, humedad);
+        }
+        
+        public System.Data.DataSet EliminarMuestreoPreliminar(string idMuestreo) {
+            return base.Channel.EliminarMuestreoPreliminar(idMuestreo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> EliminarMuestreoPreliminarAsync(string idMuestreo) {
+            return base.Channel.EliminarMuestreoPreliminarAsync(idMuestreo);
+        }
+        
+        public System.Data.DataSet BuscarUltimoMuestreoPreliminar() {
+            return base.Channel.BuscarUltimoMuestreoPreliminar();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> BuscarUltimoMuestreoPreliminarAsync() {
+            return base.Channel.BuscarUltimoMuestreoPreliminarAsync();
         }
     }
 }

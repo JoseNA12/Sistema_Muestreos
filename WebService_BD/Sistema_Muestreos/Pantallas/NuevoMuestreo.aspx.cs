@@ -68,6 +68,7 @@ namespace Sistema_Muestreos
                     "", "");
 
                 MessageBox("El muestreo se ha creado correctamente!.");
+                Response.Redirect("MainAdministrador.aspx");
             }
         }
 

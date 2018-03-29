@@ -22,27 +22,16 @@ namespace Sistema_Muestreos
 
         protected void Button_Crear_Click(object sender, EventArgs e)
         {
+
             if (!TextBox_Humedad.Text.Equals(""))
             {
                 if (!TextBox_Temperatura.Text.Equals(""))
                 {
-                    /*ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
+                    ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
+                    DataSet ds_2 = WS.BuscarUltimoMuestreoPreliminar();
+                    DataSet ds = WS.ModificarMuestreoPreliminar(ds_2.Tables[0].Rows[0][0].ToString(), TextBox_Temperatura.Text, TextBox_Humedad.Text);
 
-                    DataSet ds = WS.CrearMuestreoPreliminar(NuevoMuestreo.muestreoActual[1].ToString(), DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.ToLongTimeString(), TextBox_Temperatura.Text, TextBox_Humedad.Text);
-
-                    DataTable firsttable = ds.Tables[0];
-                    DataRow row = firsttable.Rows[0];*/
-
-                   Response.Redirect("MuestreoPreliminar2.aspx");
-
-                    /*if (row[0].ToString().Equals("exito"))
-                    {
-                        Response.Redirect("MuestreoPreliminar2.aspx");
-                    }
-                    else
-                    {
-                        MessageBox("Los datos ingresados no son válidos");
-                    }*/
+                    Response.Redirect("MuestreoPreliminar2.aspx");
                 }
                 else
                 {
