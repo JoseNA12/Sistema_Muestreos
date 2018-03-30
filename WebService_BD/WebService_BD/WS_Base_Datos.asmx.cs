@@ -18,34 +18,20 @@ namespace WebService_BD
     // [System.Web.Script.Services.ScriptService]
     public class WS_Base_Datos : System.Web.Services.WebService
     {
-        private string conexionInfo =
+        private static string conexionInfo =
             "Data Source =JOSENA\\SQLEXPRESS;" + // Nombre de usuario de SQL Server
             "Initial Catalog=SistemaMuestreos;" + // Nombre de la base de datos
                                                   //"User id=;" +
                                                   //"Password=;";
             "Integrated Security=True;"; //Sin contraseña en la bd
 
-        /*private DataSet CrearPeticion(string pInstruccion)
-        {
-            //Ingresar a la BD
-            SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
-            //conn.ConnectionString = conexionInfo;
-            ///SqlCommand com = new SqlCommand("Prueba()", conn);
-            // Peticion que queremos hacer
-            SqlDataAdapter da = new SqlDataAdapter("crud_UsuarioSelect", conn);
-            da.SelectCommand.CommandType = CommandType.StoredProcedure;
-
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            return ds;
-        }*/
+        private SqlConnection conn;
 
         [WebMethod]
         public DataSet VerificarCredenciales(string pNombreUsuario, string pContrasenia) // Funcion que devuelve un valor/respuesta proveniente de la BD
         {
             //Ingresar a la BD
-            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn =  new SqlConnection(conexionInfo);
             conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("crud_UsuarioSelect", conn);
@@ -63,7 +49,7 @@ namespace WebService_BD
         public DataSet RegistrarNuevoUsuario(string pNombre, string pApellidos, string pCorreoElectronico, string pNombreUsuario, string pContrasenia, int pIdTipoUsuario)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("crud_UsuarioInsert", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -85,7 +71,7 @@ namespace WebService_BD
         public DataSet ObtenerActividades()
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("crud_ActividadSelect", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -99,7 +85,7 @@ namespace WebService_BD
         public DataSet CrearActividad(string pNombreActividad, int pTipoActividad, string pDescripcion)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("crud_ActividadInsert", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -118,7 +104,7 @@ namespace WebService_BD
         public DataSet ModificarActividad(string pNombreOriginal, string pNombre, string pDescripcion, int pTipo)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("crud_ActividadUpdate", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -138,7 +124,7 @@ namespace WebService_BD
         public DataSet EliminarActividad(string pNombreActividad)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("crud_ActividadDelete", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -153,7 +139,7 @@ namespace WebService_BD
         public DataSet ObtenerActividad(string pNombreActividad)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("SeleccionarActividad", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -169,7 +155,7 @@ namespace WebService_BD
         {
             //Ingresar a la BD
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("crud_ColaboradorInsert", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -188,7 +174,7 @@ namespace WebService_BD
         public DataSet EliminarColaborador(string colaborador)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("crud_ColaboradorDelete", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -203,7 +189,7 @@ namespace WebService_BD
         public DataSet BuscarPuestos()
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("crud_PuestoSelect", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -216,7 +202,7 @@ namespace WebService_BD
         public DataSet BuscarColaboradores()
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("crud_ColaboradorSelect", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -229,7 +215,7 @@ namespace WebService_BD
         public DataSet ObtenerMuestreoPreliminarId()
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("DevolverMuestreoPreliminarId", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -242,7 +228,7 @@ namespace WebService_BD
         public DataSet RegistrarRevisionColaborador(int pIdMP, string IdColaborador, int pIdAtividad, string pUsuarioRegistrador, string pDescripcion)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoPreliminarObservacionInsert", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -261,7 +247,7 @@ namespace WebService_BD
         public DataSet ActualizarContrasenia(string usuario, string contraseña)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
 
             SqlDataAdapter da = new SqlDataAdapter("crud_UsuarioUpdate", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -283,7 +269,7 @@ namespace WebService_BD
         public DataSet CrearMuestreoPreliminar(string idMuestreo, string fechahora, string temperatura, string humedad)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoPreliminarInsert", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", idMuestreo);
@@ -300,7 +286,7 @@ namespace WebService_BD
         public DataSet InsertarHorasNoLaborables(string idmuestreo, string horaDescanso)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoHoraDescansoInsert", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", idmuestreo);
@@ -314,7 +300,7 @@ namespace WebService_BD
         public DataSet BuscarHorasNoLaborables()
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoHoraDescansoSelect", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataSet ds = new DataSet();
@@ -326,7 +312,7 @@ namespace WebService_BD
         public DataSet BorrarHorasNoLaborables(int idHora)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoHoraDescansoDelete", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@IdMH", idHora);
@@ -339,7 +325,7 @@ namespace WebService_BD
         public DataSet CrearMuestreo(string fechaHoraInicio, int lapsoRandomInicio, int lapsoRandomFinal, string descripcion, string adm, string nombre)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoInsert", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@FechaHoraInicio", fechaHoraInicio); // datetime
@@ -360,7 +346,7 @@ namespace WebService_BD
         public DataSet FinalizarMuestreo(string idMuestreo, string fechaHoraFinal)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoUpdate", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", idMuestreo);
@@ -376,7 +362,7 @@ namespace WebService_BD
         public DataSet EliminarMuestreo(string idMuestreo)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoDelete", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", idMuestreo);
@@ -389,7 +375,7 @@ namespace WebService_BD
         public DataSet BuscarUltimoMuestreo()
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoSelect", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataSet ds = new DataSet();
@@ -402,7 +388,7 @@ namespace WebService_BD
         public DataSet BuscarIdHoraNoLaboral(string horaInicio, string horaFinal)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("retornaIdHoraNoLaboral", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@horaInicio", horaInicio);
@@ -416,7 +402,7 @@ namespace WebService_BD
         public DataSet AniadirHoraNoLaboral(int IdMuestreo, string horaInicio, string horaFinal)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoHoraDescansoInsert", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", IdMuestreo);
@@ -431,7 +417,7 @@ namespace WebService_BD
         public DataSet ModificarMuestreoPreliminar(string IDMP, string temperatura, string humedad)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoPreliminarUpdate", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@IdMP", IDMP);
@@ -448,7 +434,7 @@ namespace WebService_BD
         public DataSet EliminarMuestreoPreliminar(string idMuestreo)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoPreliminarDelete", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@IdMP", idMuestreo);
@@ -462,7 +448,7 @@ namespace WebService_BD
         public DataSet BuscarUltimoMuestreoPreliminar()
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoPreliminarSelect", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataSet ds = new DataSet();
@@ -474,7 +460,7 @@ namespace WebService_BD
         public DataSet ModificarMuestreoPreliminarHoras(string IDMP, string fechahora)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoPreliminarUpdate", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@IdMP", IDMP);
@@ -501,7 +487,7 @@ namespace WebService_BD
             string Descripcion,string Administrador,int Estado)
         {
             SqlConnection conn = new SqlConnection(conexionInfo);
-            conn.Open();
+            // conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoUpdate", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", IdMuestreo);

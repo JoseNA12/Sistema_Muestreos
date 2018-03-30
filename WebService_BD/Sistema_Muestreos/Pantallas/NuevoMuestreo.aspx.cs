@@ -65,40 +65,33 @@ namespace Sistema_Muestreos
                 //CREAR MUESTREO PRELIMINAR VACIO
                 WS.CrearMuestreoPreliminar(WS.BuscarUltimoMuestreo().Tables[0].Rows[0][0].ToString(), "", "", "");
 
-                bool prueba = true;
-                string horaRandomFinal = DateTime.Now.ToString("yyyy-MM-dd") + " ";
-                while (prueba)
+                string horaRandomFinal = ""; //DateTime.Now.ToString("yyyy-MM-dd") + " ";
+
+                Random rdn = new Random();
+                int miValor = rdn.Next(rangoInicial, rangoFinal + tiempoExtra + 1);
+                DateTime horaRandom = DateTime.Now.AddMinutes(miValor);
+
+                DataSet dsHL = WS.BuscarHorasNoLaborables();
+
+                foreach (DataRow row in dsHL.Tables[0].Rows)
                 {
-                    Random rdn = new Random();
-                    int miValor = rdn.Next(rangoInicial, rangoFinal + tiempoExtra + 1);
-                    DateTime horaRandom = DateTime.Now.AddMinutes(miValor);
-                    bool sinbanderas = false;
-                    DataSet dsHL = WS.BuscarHorasNoLaborables();
+                    DateTime horaInicio = Convert.ToDateTime(row[2].ToString());
+                    DateTime horaFinal = Convert.ToDateTime(row[3].ToString());
 
-                    foreach (DataRow row in dsHL.Tables[0].Rows)
+                    if (horaRandom >= horaInicio && horaRandom <= horaFinal)
                     {
-                        DateTime horaInicio = Convert.ToDateTime(row[2].ToString());
-                        DateTime horaFinal = Convert.ToDateTime(row[3].ToString());
-                        if (horaRandom >= horaInicio && horaRandom <= horaFinal)
-                        {
-                            //ESTA DENTRO DE LAS HORAS DE DESCANSO
-                            sinbanderas = true;
-                            break;
-                        }
+                        //ESTA DENTRO DE LAS HORAS DE DESCANSO
+                        horaRandom = horaFinal.AddMinutes(miValor + 5);
+                    }
 
-                    }
-                    if (sinbanderas == false)
-                    {
-                        horaRandomFinal = horaRandom.ToString("yyyy-MM-dd"); //()
-                        prueba = false;
-                        
-                    }
-                    
                 }
-                MessageBox(horaRandomFinal);
-                WS.ModificarMuestreoPreliminarHoras(WS.BuscarUltimoMuestreo().Tables[0].Rows[0][0].ToString(), horaRandomFinal);
-                MessageBox("El muestreo se ha creado correctamente!. El primer muestreo preliminar se habilitará a las: " + horaRandomFinal);
-                Response.Redirect("MainAdministrador.aspx");              
+
+                horaRandomFinal = horaRandom.ToString("yyyy-MM-dd H:mm:ss");//horaRandom.ToLongTimeString(); //()
+
+                WS.ModificarMuestreoPreliminarHoras(WS.BuscarUltimoMuestreoPreliminar().Tables[0].Rows[0][0].ToString(), horaRandomFinal);
+
+                MessageBox_2("El muestreo se ha creado correctamente!. El primer muestreo preliminar se habilitará a las: " + horaRandomFinal,
+                    "MainAdministrador.aspx");       
             }
         }
 
@@ -111,6 +104,16 @@ namespace Sistema_Muestreos
         {
             Page.Controls.Add(new LiteralControl(
              "<script language='javascript'> window.alert('" + msg.Replace("'", "\\'") + "')</script>"));
+        }
+
+        private void MessageBox_2(string pMensaje, string pURL)
+        {
+            string message = pMensaje;
+            string url = pURL;
+            string script = "window.onload = function(){ alert('";
+            script += message += "');window.location = '" + url + "'; }";
+
+            ClientScript.RegisterStartupScript(this.GetType(), "Redirect", script, true);
         }
     }
 }

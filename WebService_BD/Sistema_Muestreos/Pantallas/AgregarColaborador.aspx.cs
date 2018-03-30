@@ -64,7 +64,6 @@ namespace Sistema_Muestreos
                     {
                         MessageBox("Error en la busqueda del puesto!"); // inesperado
                     }
-                    
                 }
                 else
                 {

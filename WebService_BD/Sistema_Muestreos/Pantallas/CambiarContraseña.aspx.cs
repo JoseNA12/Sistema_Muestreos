@@ -27,8 +27,7 @@ namespace Sistema_Muestreos.Pantallas
 
                 if (row[0].ToString().Equals("exito"))
                 {
-                    MessageBox("Contraseña cambiada satisfactoriamente");
-                    Response.Redirect("MainAdministrador.aspx");
+                    MessageBox_2("Contraseña cambiada satisfactoriamente", "MainAdministrador.aspx");
                 }
                 else
                 {
@@ -51,6 +50,16 @@ namespace Sistema_Muestreos.Pantallas
         protected void Button_Atras_Click(object sender, EventArgs e)
         {
             Response.Redirect("MainAdministrador.aspx");
+        }
+
+        private void MessageBox_2(string pMensaje, string pURL)
+        {
+            string message = pMensaje;
+            string url = pURL;
+            string script = "window.onload = function(){ alert('";
+            script += message += "');window.location = '" + url + "'; }";
+
+            ClientScript.RegisterStartupScript(this.GetType(), "Redirect", script, true);
         }
     }
 }

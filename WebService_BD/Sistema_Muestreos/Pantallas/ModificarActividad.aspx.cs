@@ -56,7 +56,8 @@ namespace Sistema_Muestreos
 
             if (ds.Tables[0].Rows[0][0].ToString().Equals("exito"))
             {
-                MessageBox("Se ha modificado la actividad correctamente!");
+
+                MessageBox_2("Se ha modificado la actividad correctamente!", "Actividades.aspx");
             }
             else
             {
@@ -73,6 +74,16 @@ namespace Sistema_Muestreos
         {
             Page.Controls.Add(new LiteralControl(
              "<script language='javascript'> window.alert('" + msg.Replace("'", "\\'") + "')</script>"));
+        }
+
+        private void MessageBox_2(string pMensaje, string pURL)
+        {
+            string message = pMensaje;
+            string url = pURL;
+            string script = "window.onload = function(){ alert('";
+            script += message += "');window.location = '" + url + "'; }";
+
+            ClientScript.RegisterStartupScript(this.GetType(), "Redirect", script, true);
         }
     }
 }

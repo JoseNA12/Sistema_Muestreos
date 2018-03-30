@@ -13,17 +13,17 @@ namespace Sistema_Muestreos.Pantallas
         public ListItem itemSeleccionado = null;
         string Rangoinicia, RangoFinal, TiempoExtra, TiempoAleatorio = "";
         string[] valores;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                
-
-                if (Request.Params["Valida"] != "")
+                if (Request.Params["Valida"] != null)
                 {
                     Button_Continuar.Enabled = true;
                     Button_Continuar.Visible = true;
                     Button_Atras.Enabled = false;
+                    Button_Atras.Visible = false;
                 }
                 else
                 {
@@ -37,7 +37,7 @@ namespace Sistema_Muestreos.Pantallas
                 }
                 catch
                 {
-                    MessageBox("No sirve lista");
+                    MessageBox("Error al actualizar la lista con la información.");
                 }
             }
         }

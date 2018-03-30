@@ -110,9 +110,18 @@ namespace Sistema_Muestreos
                 (DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.AddMinutes(miValor).ToLongTimeString()),
                 "", "");
 
-            MessageBox("Se ha finalizado correctamente el muestreo preliminar!.");
 
-            Response.Redirect("MainAdministrador.aspx");
+            MessageBox_2("Se ha finalizado correctamente el muestreo preliminar!.", "MainAdministrador.aspx");
+        }
+
+        private void MessageBox_2(string pMensaje, string pURL)
+        {
+            string message = pMensaje;
+            string url = pURL;
+            string script = "window.onload = function(){ alert('";
+            script += message += "');window.location = '" + url + "'; }";
+
+            ClientScript.RegisterStartupScript(this.GetType(), "Redirect", script, true);
         }
     }
 }

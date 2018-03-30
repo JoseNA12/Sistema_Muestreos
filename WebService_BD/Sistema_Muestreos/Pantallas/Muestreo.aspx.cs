@@ -22,6 +22,17 @@ namespace Sistema_Muestreos
             {
                 Button_FinalizarMuestreo.Enabled = false;
             }
+
+            /*if (Button_FinalizarMuestreo.Enabled)
+            {
+                Button_HorasLibres.Enabled = true;
+                Button_HorasLibres.Visible = true;
+            }
+            else
+            {
+                Button_HorasLibres.Enabled = false;
+                Button_HorasLibres.Visible = false;
+            }*/
         }
 
 
@@ -36,12 +47,13 @@ namespace Sistema_Muestreos
             DataSet ds = WS.FinalizarMuestreo(WS.BuscarUltimoMuestreo().Tables[0].Rows[0][0].ToString(),
                 DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.ToLongTimeString()); //DateTime.Now.ToString());
 
-            MessageBox("El muestreo ha sido finalizado!.");
+            //MessageBox("El muestreo ha sido finalizado!.");
             VerificarMuestreoTerminado();
 
             WS.EliminarMuestreoPreliminar(WS.BuscarUltimoMuestreoPreliminar().Tables[0].Rows[0][0].ToString());
 
-            Response.Redirect(Request.Url.AbsoluteUri); // Refrescar la pagina actual
+            MessageBox_2("El muestreo ha sido finalizado!.", "MainAdministrador.aspx");
+            //Response.Redirect(Request.Url.AbsoluteUri); // Refrescar la pagina actual
         }
 
         protected void Button_NuevoMuestreo_Click(object sender, EventArgs e)
@@ -150,6 +162,16 @@ namespace Sistema_Muestreos
         protected void Button_HorasLibres_Click(object sender, EventArgs e)
         {
             Response.Redirect("DefinirHorasLibres.aspx");
+        }
+
+        private void MessageBox_2(string pMensaje, string pURL)
+        {
+            string message = pMensaje;
+            string url = pURL;
+            string script = "window.onload = function(){ alert('";
+            script += message += "');window.location = '" + url + "'; }";
+
+            ClientScript.RegisterStartupScript(this.GetType(), "Redirect", script, true);
         }
     }
 }

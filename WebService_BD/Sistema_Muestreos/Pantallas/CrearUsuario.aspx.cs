@@ -37,7 +37,6 @@ namespace Sistema_Muestreos
                     if (correoResultado.Equals("exito"))
                     {
                         MessageBox("Se ha registrado con éxito el usuario!. Por favor, verifique la bandeja del correo electronico " + TextBox_CorreoElectronico.Text + " para obtener la contraseña asociada a la cuenta.");
-
                     }
                     else
                     {

@@ -30,8 +30,7 @@ namespace Sistema_Muestreos
 
                 if (!ds.Tables[0].Rows[0].ToString().Equals("error"))
                 {
-                    MessageBox("Se ha creado la Actividad correctamente");
-                    Response.Redirect("Actividades.aspx");
+                    MessageBox_2("Se ha creado la Actividad correctamente", "Actividades.aspx");
                 }
                 else
                 {
@@ -48,6 +47,16 @@ namespace Sistema_Muestreos
         protected void Button_Salir_Click(object sender, EventArgs e)
         {
             Response.Redirect("Actividades.aspx");
+        }
+
+        private void MessageBox_2(string pMensaje, string pURL)
+        {
+            string message = pMensaje;
+            string url = pURL;
+            string script = "window.onload = function(){ alert('";
+            script += message += "');window.location = '" + url + "'; }";
+
+            ClientScript.RegisterStartupScript(this.GetType(), "Redirect", script, true);
         }
     }
 }

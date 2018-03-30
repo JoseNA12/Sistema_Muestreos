@@ -41,7 +41,7 @@
                 <br />
                 <asp:Button ID="Button_ActualizarLapso" runat="server" Height="38px" OnClick="Button_ActualizarLapso_Click" Text="Actualizar lapso" Font-Names="Microsoft Sans Serif" Visible="False" />
                 &nbsp;&nbsp;
-                <asp:Button ID="Button_HorasLibres" runat="server" Height="38px" OnClick="Button_HorasLibres_Click" Text="Horas libres" Width="97px" />
+                <asp:Button ID="Button_HorasLibres" runat="server" Height="38px" OnClick="Button_HorasLibres_Click" Text="Horas libres" Width="97px" Enabled="False" Visible="False" />
                 <br />
                 <br />
                 <br />
