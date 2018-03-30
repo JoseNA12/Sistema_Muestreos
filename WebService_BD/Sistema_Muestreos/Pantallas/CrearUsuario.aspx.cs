@@ -31,7 +31,7 @@ namespace Sistema_Muestreos
                 DataRow row = firsttable.Rows[0];
 
 
-                if (!row[0].ToString().Equals("error"))
+                if (!ds.Tables[0].Rows[0][0].ToString().Equals("error")) // row[0].ToString()
                 {
                     string correoResultado = EnviarCorreo(TextBox_CorreoElectronico.Text, contraseñaTemporal);
                     if (correoResultado.Equals("exito"))
@@ -41,7 +41,7 @@ namespace Sistema_Muestreos
                     }
                     else
                     {
-                        MessageBox("Error al enviar el correo electrónico.");
+                        MessageBox("Error al enviar el correo electrónico, contacte con soporte técnico.");
 
                     }
                 }
