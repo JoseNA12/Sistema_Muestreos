@@ -16,3 +16,13 @@ C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\ob
 C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\obj\Debug\WebService_BD.csproj.CoreCompileInputs.cache
 C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\obj\Debug\WebService_BD.dll
 C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\WebService_BD\obj\Debug\WebService_BD.pdb
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\bin\WebService_BD.dll.config
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\bin\WebService_BD.dll
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\bin\WebService_BD.pdb
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\obj\Debug\WebService_BD.csprojResolveAssemblyReference.cache
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\obj\Debug\WebService_BD.csproj.CoreCompileInputs.cache
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\obj\Debug\WebService_BD.csproj.CopyComplete
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\obj\Debug\WebService_BD.dll
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\obj\Debug\WebService_BD.pdb

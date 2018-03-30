@@ -34,7 +34,7 @@ namespace Sistema_Muestreos
         {
             ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
             DataSet ds = WS.FinalizarMuestreo(WS.BuscarUltimoMuestreo().Tables[0].Rows[0][0].ToString(),
-                DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.ToLongTimeString());
+                DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.ToLongTimeString()); //DateTime.Now.ToString());
 
             MessageBox("El muestreo ha sido finalizado!.");
             VerificarMuestreoTerminado();
@@ -47,13 +47,19 @@ namespace Sistema_Muestreos
         protected void Button_NuevoMuestreo_Click(object sender, EventArgs e)
         {
             int temp;
-            
+
             if (CheckBox1_LapsoAleatorio.Checked)
             {
                 if (!TextBox_LapsoExtra.Text.Equals("") && int.TryParse(TextBox_LapsoExtra.Text, out temp) || TextBox_LapsoExtra.Text.Equals(""))
-                    Response.Redirect("NuevoMuestreo.aspx?" +
-                                "TiempoExtra=" + TextBox_LapsoExtra.Text + "&" +
-                                "TiempoAleatorio=True");
+                {
+                    ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
+                    WS.CrearMuestreo(DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.ToLongTimeString(), 0, 0, "", "", "");
+                    //DateTime.Now.ToString()
+
+                    Response.Redirect("DefinirHorasLibres.aspx?" +
+                            "TiempoExtra=" + TextBox_LapsoExtra.Text + "&" +
+                            "TiempoAleatorio=True" + "&Valida=true");
+                }
                 else
                 {
                     MessageBox("Formato inválido del lapso de tiempo.");
@@ -64,20 +70,35 @@ namespace Sistema_Muestreos
                 if (!TextBox_RangoInicial.Text.Equals("") && !TextBox_RangoFinal.Text.Equals("") &&
                     int.TryParse(TextBox_RangoInicial.Text, out temp) && int.TryParse(TextBox_RangoFinal.Text, out temp))
                 {
-                    string tiempoExtra = TextBox_LapsoExtra.Text;
+                    int rangoInicial = Int32.Parse(TextBox_RangoInicial.Text);
+                    int rangoFinal = Int32.Parse(TextBox_RangoFinal.Text);
 
-                    if ((!TextBox_LapsoExtra.Text.Equals("") && int.TryParse(TextBox_LapsoExtra.Text, out temp))
-                        || TextBox_LapsoExtra.Text.Equals(""))
+                    if (rangoInicial < rangoFinal)
                     {
-                        Response.Redirect("NuevoMuestreo.aspx?" +
-                                "RangoInicial=" + TextBox_RangoInicial.Text + "&" +
-                                "RangoFinal=" + TextBox_RangoFinal.Text + "&" +
-                                "TiempoExtra=" + TextBox_LapsoExtra.Text + "&" +
-                                "TiempoAleatorio=False");
+
+                        string tiempoExtra = TextBox_LapsoExtra.Text;
+
+                        if ((!TextBox_LapsoExtra.Text.Equals("") && int.TryParse(TextBox_LapsoExtra.Text, out temp))
+                            || TextBox_LapsoExtra.Text.Equals(""))
+                        {
+                            ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
+                            WS.CrearMuestreo(DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.ToLongTimeString(), 0, 0, "", "", "");
+                            //DateTime.Now.ToString()
+
+                            Response.Redirect("DefinirHorasLibres.aspx?" +
+                                    "RangoInicial=" + TextBox_RangoInicial.Text + "&" +
+                                    "RangoFinal=" + TextBox_RangoFinal.Text + "&" +
+                                    "TiempoExtra=" + TextBox_LapsoExtra.Text + "&" +
+                                    "TiempoAleatorio=False" + "&Valida=true");
+                        }
+                        else
+                        {
+                            MessageBox("Formato inválido en los rangos de tiempo.");
+                        }
                     }
                     else
                     {
-                        MessageBox("Formato inválido en los rangos de tiempo.");
+                        MessageBox("Error, el rango inicial debe ser menor que el rango final.");
                     }
                 }
                 else

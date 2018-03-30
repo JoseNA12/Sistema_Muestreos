@@ -486,5 +486,37 @@ namespace WebService_BD
             da.Fill(ds);
             return ds;
         }
+        [WebMethod]
+        /*@IdMuestreo int,
+		@Nombre [nvarchar](50) = null,
+		@FechaHoraInicio [datetime] = null,
+		@LapsoRandomInicio [int] = null,
+		@LapsoRandomFinal [int] = null,
+		@FechaHoraFinalizacion [datetime] = null,
+		@EstadoMuestreo [int] = null,
+		@Descripcion [nvarchar](200) = null,
+		@Administrador [nvarchar](50) = null,
+		@Estado [bit] = null*/
+        public DataSet ModificarMuestreo(int IdMuestreo, string Nombre, string fechaHora,int randomInicio, int randomFinal,string FechaHoraFinalizacion,int EstadoMuestro,
+            string Descripcion,string Administrador,int Estado)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoUpdate", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", IdMuestreo);
+            da.SelectCommand.Parameters.AddWithValue("@Nombre", Nombre);
+            da.SelectCommand.Parameters.AddWithValue("@FechaHoraInicio", fechaHora);
+            da.SelectCommand.Parameters.AddWithValue("@LapsoRandomInicio", randomInicio);
+            da.SelectCommand.Parameters.AddWithValue("@LapsoRandomFinal", randomFinal);
+            da.SelectCommand.Parameters.AddWithValue("@FechaHoraFinalizacion", FechaHoraFinalizacion);
+            da.SelectCommand.Parameters.AddWithValue("@EstadoMuestreo", EstadoMuestro);
+            da.SelectCommand.Parameters.AddWithValue("@Descripcion", Descripcion);
+            da.SelectCommand.Parameters.AddWithValue("@Administrador", Administrador);
+            da.SelectCommand.Parameters.AddWithValue("@Estado", Estado);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
     }
 }

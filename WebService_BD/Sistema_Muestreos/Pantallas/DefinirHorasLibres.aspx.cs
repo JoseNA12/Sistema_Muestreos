@@ -11,11 +11,26 @@ namespace Sistema_Muestreos.Pantallas
     public partial class DefinirHorasLibres : System.Web.UI.Page
     {
         public ListItem itemSeleccionado = null;
+        string Rangoinicia, RangoFinal, TiempoExtra, TiempoAleatorio = "";
         string[] valores;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
+                
+
+                if (Request.Params["Valida"] != "")
+                {
+                    Button_Continuar.Enabled = true;
+                    Button_Continuar.Visible = true;
+                    Button_Atras.Enabled = false;
+                }
+                else
+                {
+                    Button_Continuar.Enabled = false;
+                    Button_Continuar.Visible = false;
+                    Button_Atras.Enabled = true;
+                }
                 try
                 {
                     ActualizarLista();
@@ -102,6 +117,23 @@ namespace Sistema_Muestreos.Pantallas
 
                 MessageBox("Se ha añadido la hora correctamente!.");
             }
+        }
+        protected void Button_Continuar_Click(object sender, EventArgs e)
+        {
+            if (Request.Params["TiempoAleatorio"].ToString().Equals("True")) {
+                Response.Redirect("NuevoMuestreo.aspx?" +                                    
+                                    "TiempoExtra=" + TiempoExtra + "&" +
+                                    "TiempoAleatorio=" + Request.Params["TiempoAleatorio"]);
+            }
+            else
+            {
+                Response.Redirect("NuevoMuestreo.aspx?" +
+                                    "RangoInicial=" + Request.Params["RangoInicial"] + "&" +
+                                    "RangoFinal=" + Request.Params["RangoFinal"] + "&" +
+                                    "TiempoExtra=" + Request.Params["TiempoExtra"] + "&" +
+                                    "TiempoAleatorio=" + Request.Params["TiempoAleatorio"]);
+            }
+            
         }
     }
 }

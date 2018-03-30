@@ -39,6 +39,8 @@
                 <asp:Button ID="Button_Atras" runat="server" Height="38px" Text="Atras" Width="69px" OnClick="Button_Atras_Click" />
             </asp:Panel>
         </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="Button_Continuar" runat="server" Height="37px" OnClick="Button_Continuar_Click" Text="Continuar" Width="86px" />
     </form>
 </body>
 </html>

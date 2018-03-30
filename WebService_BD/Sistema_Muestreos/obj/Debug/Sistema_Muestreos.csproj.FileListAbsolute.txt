@@ -16,3 +16,13 @@ C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreo
 C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.csproj.CoreCompileInputs.cache
 C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.dll
 C:\Users\jose_\Documents\GitHub\Sistema_Muestreos\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.pdb
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\Sistema_Muestreos\bin\Sistema_Muestreos.dll.config
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\Sistema_Muestreos\bin\Sistema_Muestreos.dll
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\Sistema_Muestreos\bin\Sistema_Muestreos.pdb
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\Sistema_Muestreos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\Sistema_Muestreos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.csprojResolveAssemblyReference.cache
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.csproj.CoreCompileInputs.cache
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.csproj.CopyComplete
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.dll
+C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\Sistema_Muestreos\obj\Debug\Sistema_Muestreos.pdb
