@@ -204,6 +204,13 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarUltimoMuestreoPreliminar", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> BuscarUltimoMuestreoPreliminarAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarMuestreoPreliminarHoras", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ModificarMuestreoPreliminarHoras(string IDMP, string fechahora);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarMuestreoPreliminarHoras", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ModificarMuestreoPreliminarHorasAsync(string IDMP, string fechahora);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -447,6 +454,14 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> BuscarUltimoMuestreoPreliminarAsync() {
             return base.Channel.BuscarUltimoMuestreoPreliminarAsync();
+        }
+        
+        public System.Data.DataSet ModificarMuestreoPreliminarHoras(string IDMP, string fechahora) {
+            return base.Channel.ModificarMuestreoPreliminarHoras(IDMP, fechahora);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> ModificarMuestreoPreliminarHorasAsync(string IDMP, string fechahora) {
+            return base.Channel.ModificarMuestreoPreliminarHorasAsync(IDMP, fechahora);
         }
     }
 }

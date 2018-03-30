@@ -574,6 +574,28 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ModificarMuestreoPreliminarHoras">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDMP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechahora" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarMuestreoPreliminarHorasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModificarMuestreoPreliminarHorasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="VerificarCredencialesSoapIn">
@@ -738,6 +760,12 @@
   <wsdl:message name="BuscarUltimoMuestreoPreliminarSoapOut">
     <wsdl:part name="parameters" element="tns:BuscarUltimoMuestreoPreliminarResponse" />
   </wsdl:message>
+  <wsdl:message name="ModificarMuestreoPreliminarHorasSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarMuestreoPreliminarHoras" />
+  </wsdl:message>
+  <wsdl:message name="ModificarMuestreoPreliminarHorasSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarMuestreoPreliminarHorasResponse" />
+  </wsdl:message>
   <wsdl:portType name="WS_Base_DatosSoap">
     <wsdl:operation name="VerificarCredenciales">
       <wsdl:input message="tns:VerificarCredencialesSoapIn" />
@@ -846,6 +874,10 @@
     <wsdl:operation name="BuscarUltimoMuestreoPreliminar">
       <wsdl:input message="tns:BuscarUltimoMuestreoPreliminarSoapIn" />
       <wsdl:output message="tns:BuscarUltimoMuestreoPreliminarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarMuestreoPreliminarHoras">
+      <wsdl:input message="tns:ModificarMuestreoPreliminarHorasSoapIn" />
+      <wsdl:output message="tns:ModificarMuestreoPreliminarHorasSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WS_Base_DatosSoap" type="tns:WS_Base_DatosSoap">
@@ -1093,6 +1125,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ModificarMuestreoPreliminarHoras">
+      <soap:operation soapAction="http://tempuri.org/ModificarMuestreoPreliminarHoras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WS_Base_DatosSoap12" type="tns:WS_Base_DatosSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1332,6 +1373,15 @@
     </wsdl:operation>
     <wsdl:operation name="BuscarUltimoMuestreoPreliminar">
       <soap12:operation soapAction="http://tempuri.org/BuscarUltimoMuestreoPreliminar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarMuestreoPreliminarHoras">
+      <soap12:operation soapAction="http://tempuri.org/ModificarMuestreoPreliminarHoras" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

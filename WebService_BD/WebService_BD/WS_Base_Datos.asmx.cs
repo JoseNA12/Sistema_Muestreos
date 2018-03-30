@@ -469,5 +469,22 @@ namespace WebService_BD
             da.Fill(ds);
             return ds;
         }
+
+        [WebMethod]
+        public DataSet ModificarMuestreoPreliminarHoras(string IDMP, string fechahora)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_MuestreoPreliminarUpdate", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@IdMP", IDMP);
+            //da.SelectCommand.Parameters.AddWithValue("@IdMuestreo", );
+            da.SelectCommand.Parameters.AddWithValue("@FechaHora", fechahora);
+            //da.SelectCommand.Parameters.AddWithValue("@Humedad", humedad);
+            //da.SelectCommand.Parameters.AddWithValue("@Temperatura", temperatura);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
     }
 }

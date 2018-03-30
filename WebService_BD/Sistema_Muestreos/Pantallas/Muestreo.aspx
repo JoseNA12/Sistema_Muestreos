@@ -9,7 +9,7 @@
 </head>
 <body style="margin: auto; background-image: url('Img/Background_2.jpg'); width: 611px; position:center; height: 461px;">
     <form id="form1" runat="server">
-        <div style="width: 609px; height: 423px">
+        <div style="width: 609px; height: 453px">
             <br />
             <br />
                 <asp:Label ID="Label2" runat="server" Font-Names="Microsoft Sans Serif" Font-Size="X-Large" ForeColor="White" Text="Muestreo"></asp:Label>
