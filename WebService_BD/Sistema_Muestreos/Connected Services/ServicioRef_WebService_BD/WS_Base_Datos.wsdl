@@ -626,6 +626,87 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="CrearPuesto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearPuestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearPuestoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarPuesto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombreOriginal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreNuevo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarPuestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModificarPuestoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarPuesto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarPuestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarPuestoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPuesto">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerPuestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPuestoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="VerificarCredencialesSoapIn">
@@ -802,6 +883,30 @@
   <wsdl:message name="ModificarMuestreoSoapOut">
     <wsdl:part name="parameters" element="tns:ModificarMuestreoResponse" />
   </wsdl:message>
+  <wsdl:message name="CrearPuestoSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearPuesto" />
+  </wsdl:message>
+  <wsdl:message name="CrearPuestoSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearPuestoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificarPuestoSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarPuesto" />
+  </wsdl:message>
+  <wsdl:message name="ModificarPuestoSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarPuestoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPuestoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarPuesto" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPuestoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarPuestoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPuestoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPuesto" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPuestoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPuestoResponse" />
+  </wsdl:message>
   <wsdl:portType name="WS_Base_DatosSoap">
     <wsdl:operation name="VerificarCredenciales">
       <wsdl:input message="tns:VerificarCredencialesSoapIn" />
@@ -918,6 +1023,22 @@
     <wsdl:operation name="ModificarMuestreo">
       <wsdl:input message="tns:ModificarMuestreoSoapIn" />
       <wsdl:output message="tns:ModificarMuestreoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearPuesto">
+      <wsdl:input message="tns:CrearPuestoSoapIn" />
+      <wsdl:output message="tns:CrearPuestoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarPuesto">
+      <wsdl:input message="tns:ModificarPuestoSoapIn" />
+      <wsdl:output message="tns:ModificarPuestoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPuesto">
+      <wsdl:input message="tns:EliminarPuestoSoapIn" />
+      <wsdl:output message="tns:EliminarPuestoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPuesto">
+      <wsdl:input message="tns:ObtenerPuestoSoapIn" />
+      <wsdl:output message="tns:ObtenerPuestoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WS_Base_DatosSoap" type="tns:WS_Base_DatosSoap">
@@ -1183,6 +1304,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CrearPuesto">
+      <soap:operation soapAction="http://tempuri.org/CrearPuesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarPuesto">
+      <soap:operation soapAction="http://tempuri.org/ModificarPuesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPuesto">
+      <soap:operation soapAction="http://tempuri.org/EliminarPuesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPuesto">
+      <soap:operation soapAction="http://tempuri.org/ObtenerPuesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WS_Base_DatosSoap12" type="tns:WS_Base_DatosSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1440,6 +1597,42 @@
     </wsdl:operation>
     <wsdl:operation name="ModificarMuestreo">
       <soap12:operation soapAction="http://tempuri.org/ModificarMuestreo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearPuesto">
+      <soap12:operation soapAction="http://tempuri.org/CrearPuesto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarPuesto">
+      <soap12:operation soapAction="http://tempuri.org/ModificarPuesto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPuesto">
+      <soap12:operation soapAction="http://tempuri.org/EliminarPuesto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPuesto">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerPuesto" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Sistema_Muestreos {
+namespace Sistema_Muestreos.Pantallas {
     
     
-    public partial class Colaboradores {
+    public partial class Puestos {
         
         /// <summary>
         /// Control form1.
@@ -22,22 +22,31 @@ namespace Sistema_Muestreos {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control Label5.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control ListBox_Colaboradores.
+        /// Control Panel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox_Colaboradores;
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+        
+        /// <summary>
+        /// Control TextBox_Puesto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Puesto;
         
         /// <summary>
         /// Control Button_Agregar.
@@ -49,6 +58,15 @@ namespace Sistema_Muestreos {
         protected global::System.Web.UI.WebControls.Button Button_Agregar;
         
         /// <summary>
+        /// Control ListBox_Puestos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox_Puestos;
+        
+        /// <summary>
         /// Control Button_Eliminar.
         /// </summary>
         /// <remarks>
@@ -58,21 +76,12 @@ namespace Sistema_Muestreos {
         protected global::System.Web.UI.WebControls.Button Button_Eliminar;
         
         /// <summary>
-        /// Control Button_Puestos.
+        /// Control Button_Atras.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Puestos;
-        
-        /// <summary>
-        /// Control Button_Salir.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Salir;
+        protected global::System.Web.UI.WebControls.Button Button_Atras;
     }
 }

@@ -88,6 +88,7 @@
     <Content Include="Pantallas\MuestreoPreliminar.aspx" />
     <Content Include="Pantallas\Muestreo.aspx" />
     <Content Include="Pantallas\NuevoMuestreo.aspx" />
+    <Content Include="Pantallas\Puestos.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -210,6 +211,13 @@
     </Compile>
     <Compile Include="Pantallas\NuevoMuestreo.aspx.designer.cs">
       <DependentUpon>NuevoMuestreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Puestos.aspx.cs">
+      <DependentUpon>Puestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Puestos.aspx.designer.cs">
+      <DependentUpon>Puestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

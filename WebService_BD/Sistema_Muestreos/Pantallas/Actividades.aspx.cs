@@ -30,7 +30,7 @@ namespace Sistema_Muestreos
                 }
                 catch
                 {
-                    MessageBox("Error");
+                    MessageBox("Error al cargar los datos.");
                 }
             }
         }

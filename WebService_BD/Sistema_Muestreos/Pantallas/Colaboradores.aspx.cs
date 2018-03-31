@@ -65,8 +65,7 @@ namespace Sistema_Muestreos
 
                 if (!ds.Tables[0].Rows[0].Equals("error"))
                 {
-                    MessageBox("Se ha eliminado al colaborador correctamente.");
-                    Response.Redirect(Request.Url.AbsoluteUri); // Refrescar la pagina actual
+                    MessageBox_2("Se ha eliminado al colaborador correctamente.", "Colaboradores.aspx");
                 }
                 else
                 {
@@ -93,5 +92,19 @@ namespace Sistema_Muestreos
             }
         }
 
+        protected void Button_Puestos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Puestos.aspx");
+        }
+
+        private void MessageBox_2(string pMensaje, string pURL)
+        {
+            string message = pMensaje;
+            string url = pURL;
+            string script = "window.onload = function(){ alert('";
+            script += message += "');window.location = '" + url + "'; }";
+
+            ClientScript.RegisterStartupScript(this.GetType(), "Redirect", script, true);
+        }
     }
 }

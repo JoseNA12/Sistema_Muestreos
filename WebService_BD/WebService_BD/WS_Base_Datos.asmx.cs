@@ -504,5 +504,65 @@ namespace WebService_BD
             da.Fill(ds);
             return ds;
         }
+
+
+        [WebMethod]
+        public DataSet CrearPuesto(string nombre)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter("crud_PuestoInsert", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            da.SelectCommand.Parameters.AddWithValue("@Nombre", nombre);
+            da.SelectCommand.Parameters.AddWithValue("@Estado", 1);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet ModificarPuesto(string nombreOriginal, string nombreNuevo)
+        {
+
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_PuestoUpdate", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@NombreOriginal", nombreOriginal);
+            da.SelectCommand.Parameters.AddWithValue("@Nombre", nombreNuevo);
+            da.SelectCommand.Parameters.AddWithValue("@Estado", 1);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet EliminarPuesto(string nombre)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+
+            SqlDataAdapter da = new SqlDataAdapter("crud_PuestoDelete", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            da.SelectCommand.Parameters.AddWithValue("@Nombre", nombre);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet ObtenerPuesto()
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("crud_PuestoSelect", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
     }
 }

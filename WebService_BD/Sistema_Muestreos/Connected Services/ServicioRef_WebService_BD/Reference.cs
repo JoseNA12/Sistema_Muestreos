@@ -218,6 +218,34 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarMuestreo", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> ModificarMuestreoAsync(int IdMuestreo, string Nombre, string fechaHora, int randomInicio, int randomFinal, string FechaHoraFinalizacion, int EstadoMuestro, string Descripcion, string Administrador, int Estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearPuesto", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet CrearPuesto(string nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearPuesto", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> CrearPuestoAsync(string nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarPuesto", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ModificarPuesto(string nombreOriginal, string nombreNuevo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarPuesto", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ModificarPuestoAsync(string nombreOriginal, string nombreNuevo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarPuesto", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet EliminarPuesto(string nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarPuesto", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> EliminarPuestoAsync(string nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerPuesto", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ObtenerPuesto();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerPuesto", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ObtenerPuestoAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -477,6 +505,38 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> ModificarMuestreoAsync(int IdMuestreo, string Nombre, string fechaHora, int randomInicio, int randomFinal, string FechaHoraFinalizacion, int EstadoMuestro, string Descripcion, string Administrador, int Estado) {
             return base.Channel.ModificarMuestreoAsync(IdMuestreo, Nombre, fechaHora, randomInicio, randomFinal, FechaHoraFinalizacion, EstadoMuestro, Descripcion, Administrador, Estado);
+        }
+        
+        public System.Data.DataSet CrearPuesto(string nombre) {
+            return base.Channel.CrearPuesto(nombre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> CrearPuestoAsync(string nombre) {
+            return base.Channel.CrearPuestoAsync(nombre);
+        }
+        
+        public System.Data.DataSet ModificarPuesto(string nombreOriginal, string nombreNuevo) {
+            return base.Channel.ModificarPuesto(nombreOriginal, nombreNuevo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> ModificarPuestoAsync(string nombreOriginal, string nombreNuevo) {
+            return base.Channel.ModificarPuestoAsync(nombreOriginal, nombreNuevo);
+        }
+        
+        public System.Data.DataSet EliminarPuesto(string nombre) {
+            return base.Channel.EliminarPuesto(nombre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> EliminarPuestoAsync(string nombre) {
+            return base.Channel.EliminarPuestoAsync(nombre);
+        }
+        
+        public System.Data.DataSet ObtenerPuesto() {
+            return base.Channel.ObtenerPuesto();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> ObtenerPuestoAsync() {
+            return base.Channel.ObtenerPuestoAsync();
         }
     }
 }
