@@ -246,6 +246,13 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerPuesto", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> ObtenerPuestoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/verificarPuesto", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet verificarPuesto(string nombrePuesto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/verificarPuesto", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> verificarPuestoAsync(string nombrePuesto);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -537,6 +544,14 @@ namespace Sistema_Muestreos.ServicioRef_WebService_BD {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> ObtenerPuestoAsync() {
             return base.Channel.ObtenerPuestoAsync();
+        }
+        
+        public System.Data.DataSet verificarPuesto(string nombrePuesto) {
+            return base.Channel.verificarPuesto(nombrePuesto);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> verificarPuestoAsync(string nombrePuesto) {
+            return base.Channel.verificarPuestoAsync(nombrePuesto);
         }
     }
 }

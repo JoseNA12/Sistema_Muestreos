@@ -61,19 +61,30 @@ namespace Sistema_Muestreos.Pantallas
             }
             else
             {
+                
                 ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
-                DataSet ds = WS.EliminarPuesto(itemSeleccionado.Value.ToString());
+                DataSet ds = WS.verificarPuesto(itemSeleccionado.Value.ToString());
 
-                if (!ds.Tables[0].Rows[0].Equals("error"))
+                if (!ds.Tables[0].Rows[0][0].ToString().Equals("puesto en uso"))
                 {
-                    MessageBox("Se ha eliminado el puesto correctamente.");
-                    CargarPuestos();
+                   
+                    ds = WS.EliminarPuesto(itemSeleccionado.Value.ToString());
+                    if (!ds.Tables[0].Rows[0][0].Equals("error"))
+                    {
+                        MessageBox("Se ha eliminado el puesto correctamente.");
+                        CargarPuestos();
 
+                    }
+                    else
+                    {
+                        MessageBox("Error al eliminar");
+                    }
                 }
                 else
                 {
-                    MessageBox("Error al eliminar");
+                    MessageBox("El puesto seleccionado está en uso por los colaboradores.");
                 }
+                
                 
             }
         }

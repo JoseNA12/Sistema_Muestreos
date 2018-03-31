@@ -707,6 +707,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="verificarPuesto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombrePuesto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verificarPuestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="verificarPuestoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="VerificarCredencialesSoapIn">
@@ -907,6 +928,12 @@
   <wsdl:message name="ObtenerPuestoSoapOut">
     <wsdl:part name="parameters" element="tns:ObtenerPuestoResponse" />
   </wsdl:message>
+  <wsdl:message name="verificarPuestoSoapIn">
+    <wsdl:part name="parameters" element="tns:verificarPuesto" />
+  </wsdl:message>
+  <wsdl:message name="verificarPuestoSoapOut">
+    <wsdl:part name="parameters" element="tns:verificarPuestoResponse" />
+  </wsdl:message>
   <wsdl:portType name="WS_Base_DatosSoap">
     <wsdl:operation name="VerificarCredenciales">
       <wsdl:input message="tns:VerificarCredencialesSoapIn" />
@@ -1039,6 +1066,10 @@
     <wsdl:operation name="ObtenerPuesto">
       <wsdl:input message="tns:ObtenerPuestoSoapIn" />
       <wsdl:output message="tns:ObtenerPuestoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verificarPuesto">
+      <wsdl:input message="tns:verificarPuestoSoapIn" />
+      <wsdl:output message="tns:verificarPuestoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WS_Base_DatosSoap" type="tns:WS_Base_DatosSoap">
@@ -1340,6 +1371,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="verificarPuesto">
+      <soap:operation soapAction="http://tempuri.org/verificarPuesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WS_Base_DatosSoap12" type="tns:WS_Base_DatosSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1633,6 +1673,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerPuesto">
       <soap12:operation soapAction="http://tempuri.org/ObtenerPuesto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarPuesto">
+      <soap12:operation soapAction="http://tempuri.org/verificarPuesto" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

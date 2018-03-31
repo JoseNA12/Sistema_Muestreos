@@ -26,3 +26,12 @@ C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebSe
 C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\obj\Debug\WebService_BD.csproj.CopyComplete
 C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\obj\Debug\WebService_BD.dll
 C:\Users\JCO35\Desktop\Progra Reque\Sistema_Muestreos-master\WebService_BD\WebService_BD\obj\Debug\WebService_BD.pdb
+C:\Users\Josua\Documents\TEC\Requerimientos de Software\Sistema_Muestreos-master\WebService_BD\WebService_BD\bin\WebService_BD.dll.config
+C:\Users\Josua\Documents\TEC\Requerimientos de Software\Sistema_Muestreos-master\WebService_BD\WebService_BD\bin\WebService_BD.dll
+C:\Users\Josua\Documents\TEC\Requerimientos de Software\Sistema_Muestreos-master\WebService_BD\WebService_BD\bin\WebService_BD.pdb
+C:\Users\Josua\Documents\TEC\Requerimientos de Software\Sistema_Muestreos-master\WebService_BD\WebService_BD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Josua\Documents\TEC\Requerimientos de Software\Sistema_Muestreos-master\WebService_BD\WebService_BD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Josua\Documents\TEC\Requerimientos de Software\Sistema_Muestreos-master\WebService_BD\WebService_BD\obj\Debug\WebService_BD.csprojResolveAssemblyReference.cache
+C:\Users\Josua\Documents\TEC\Requerimientos de Software\Sistema_Muestreos-master\WebService_BD\WebService_BD\obj\Debug\WebService_BD.csproj.CoreCompileInputs.cache
+C:\Users\Josua\Documents\TEC\Requerimientos de Software\Sistema_Muestreos-master\WebService_BD\WebService_BD\obj\Debug\WebService_BD.dll
+C:\Users\Josua\Documents\TEC\Requerimientos de Software\Sistema_Muestreos-master\WebService_BD\WebService_BD\obj\Debug\WebService_BD.pdb

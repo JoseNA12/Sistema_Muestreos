@@ -19,7 +19,7 @@ namespace WebService_BD
     public class WS_Base_Datos : System.Web.Services.WebService
     {
         private static string conexionInfo =
-            "Data Source =JOSENA\\SQLEXPRESS;" + // Nombre de usuario de SQL Server
+            "Data Source = JOSENA\\SQLEXPRESS;" + // Nombre de usuario de SQL Server
             "Initial Catalog=SistemaMuestreos;" + // Nombre de la base de datos
                                                   //"User id=;" +
                                                   //"Password=;";
@@ -472,17 +472,8 @@ namespace WebService_BD
             da.Fill(ds);
             return ds;
         }
+
         [WebMethod]
-        /*@IdMuestreo int,
-		@Nombre [nvarchar](50) = null,
-		@FechaHoraInicio [datetime] = null,
-		@LapsoRandomInicio [int] = null,
-		@LapsoRandomFinal [int] = null,
-		@FechaHoraFinalizacion [datetime] = null,
-		@EstadoMuestreo [int] = null,
-		@Descripcion [nvarchar](200) = null,
-		@Administrador [nvarchar](50) = null,
-		@Estado [bit] = null*/
         public DataSet ModificarMuestreo(int IdMuestreo, string Nombre, string fechaHora,int randomInicio, int randomFinal,string FechaHoraFinalizacion,int EstadoMuestro,
             string Descripcion,string Administrador,int Estado)
         {
@@ -560,6 +551,19 @@ namespace WebService_BD
             conn.Open();
             SqlDataAdapter da = new SqlDataAdapter("crud_PuestoSelect", conn);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet verificarPuesto(string nombrePuesto)
+        {
+            SqlConnection conn = new SqlConnection(conexionInfo);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("verificarUsabilidadPuesto", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@nombrePuesto", nombrePuesto);
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;
