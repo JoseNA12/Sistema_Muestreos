@@ -31,25 +31,32 @@ namespace Sistema_Muestreos.Pantallas
 
         protected void Button_Agregar_Click(object sender, EventArgs e)
         {
-            try
+            if (!TextBox_Puesto.Text.Equals(""))
             {
-                ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
-                DataSet ds = WS.CrearPuesto(TextBox_Puesto.Text);
-
-                if (!ds.Tables[0].Rows[0].ToString().Equals("error"))
+                try
                 {
-                    MessageBox("Se ha creado el Puesto correctamente");
-                    CargarPuestos();
-                }
-                else
-                {
-                    MessageBox("Error al crear el Puesto.");
-                }
+                    ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
+                    DataSet ds = WS.CrearPuesto(TextBox_Puesto.Text);
 
+                    if (!ds.Tables[0].Rows[0].ToString().Equals("error"))
+                    {
+                        MessageBox("Se ha creado el Puesto correctamente");
+                        CargarPuestos();
+                    }
+                    else
+                    {
+                        MessageBox("Error al crear el Puesto.");
+                    }
+
+                }
+                catch
+                {
+                    MessageBox("Error inesperado.");
+                }
             }
-            catch
+            else
             {
-                MessageBox("Error inesperado.");
+                MessageBox("Ingrese el nombre del puesto!.");
             }
         }
 

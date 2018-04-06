@@ -45,7 +45,6 @@ namespace Sistema_Muestreos
         {
             //var text = (listBox1.SelectedItem as DataRowView)["columnName"].ToString();
             // string actividadAEliminar = String.Join(", ",ListBox_Actividades.Items.Cast<ListItem>().Where(i=>i.Selected).Select(i => i.Value).ToString());
-            int aux = 0;
 
             if (itemSeleccionado == null)
             {
@@ -58,21 +57,17 @@ namespace Sistema_Muestreos
 
                 if (!ds.Tables[0].Rows[0].Equals("error"))
                 {
-                    MessageBox("Se ha eliminado la actividad correctamente.");
-                    Response.Redirect(Request.Url.AbsoluteUri); // Refrescar la pagina actual
-
+                    MessageBox_2("Se ha eliminado la actividad correctamente.", "Actividades.aspx");
                 }
                 else
                 {
                     MessageBox("Error al eliminar");
                 }
-                Response.Redirect(Request.Url.AbsoluteUri); // Refrescar la pagina actual
             }
         }
 
         protected void ListBox_Actividades_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             foreach (ListItem item in ListBox_Actividades.Items)
             {
                 if (item.Selected == true)
@@ -105,6 +100,16 @@ namespace Sistema_Muestreos
             {
                 MessageBox("Seleccione una actividad para poder modificarla.");
             }
+        }
+
+        private void MessageBox_2(string pMensaje, string pURL)
+        {
+            string message = pMensaje;
+            string url = pURL;
+            string script = "window.onload = function(){ alert('";
+            script += message += "');window.location = '" + url + "'; }";
+
+            ClientScript.RegisterStartupScript(this.GetType(), "Redirect", script, true);
         }
     }
 }

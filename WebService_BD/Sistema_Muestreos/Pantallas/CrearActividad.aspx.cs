@@ -23,24 +23,31 @@ namespace Sistema_Muestreos
 
         protected void Button_Crear_Click(object sender, EventArgs e)
         {
-            try
+            if (!TextBox_NombreActividad.Text.Equals(""))
             {
-                ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
-                DataSet ds = WS.CrearActividad(TextBox_NombreActividad.Text, Int32.Parse(DropDownList_TipoActividad.SelectedItem.Value), TextBox_DescripcionActividad.Text);
+                try
+                {
+                    ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
+                    DataSet ds = WS.CrearActividad(TextBox_NombreActividad.Text, Int32.Parse(DropDownList_TipoActividad.SelectedItem.Value), TextBox_DescripcionActividad.Text);
 
-                if (!ds.Tables[0].Rows[0].ToString().Equals("error"))
-                {
-                    MessageBox_2("Se ha creado la Actividad correctamente", "Actividades.aspx");
+                    if (!ds.Tables[0].Rows[0].ToString().Equals("error"))
+                    {
+                        MessageBox_2("Se ha creado la Actividad correctamente", "Actividades.aspx");
+                    }
+                    else
+                    {
+                        MessageBox("Error al crear la actividad");
+                    }
+
                 }
-                else
+                catch
                 {
-                    MessageBox("Error al crear la actividad");
+                    MessageBox("Error");
                 }
-                
             }
-            catch
+            else
             {
-                MessageBox("Error");
+                MessageBox("Ingrese un nombre para la actividad.");
             }
         }
 

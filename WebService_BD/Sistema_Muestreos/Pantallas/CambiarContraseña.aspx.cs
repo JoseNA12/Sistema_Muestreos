@@ -19,21 +19,27 @@ namespace Sistema_Muestreos.Pantallas
         {
             if (!TextBox_Contrasenia_1.Text.Equals("") && !TextBox_Contrasenia_2.Text.Equals("") && CheckBox_EstasSeguro.Checked)
             {
-                ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
-
-                DataSet ds = WS.ActualizarContrasenia(IniciarSesion.usuarioActual[0].ToString(), TextBox_Contrasenia_1.Text);
-                DataTable tablaResultado = ds.Tables[0];
-                DataRow row = tablaResultado.Rows[0];
-
-                if (row[0].ToString().Equals("exito"))
+                if (TextBox_Contrasenia_1.Text.Equals(TextBox_Contrasenia_2.Text))
                 {
-                    MessageBox_2("Contraseña cambiada satisfactoriamente", "MainAdministrador.aspx");
+                    ServicioRef_WebService_BD.WS_Base_DatosSoapClient WS = new ServicioRef_WebService_BD.WS_Base_DatosSoapClient();
+
+                    DataSet ds = WS.ActualizarContrasenia(IniciarSesion.usuarioActual[0].ToString(), TextBox_Contrasenia_1.Text);
+                    DataTable tablaResultado = ds.Tables[0];
+                    DataRow row = tablaResultado.Rows[0];
+
+                    if (row[0].ToString().Equals("exito"))
+                    {
+                        MessageBox_2("Contraseña cambiada satisfactoriamente", "MainAdministrador.aspx");
+                    }
+                    else
+                    {
+                        MessageBox("Error");
+                    }
                 }
                 else
                 {
-                    MessageBox("Error");
+                    MessageBox("Las contraseñas ingresadas no coinciden, intente nuevamente.");
                 }
-                
             }
             else
             {

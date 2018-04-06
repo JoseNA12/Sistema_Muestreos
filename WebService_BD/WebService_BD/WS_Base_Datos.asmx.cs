@@ -357,7 +357,6 @@ namespace WebService_BD
             return ds;
         }
 
-
         [WebMethod]
         public DataSet EliminarMuestreo(string idMuestreo)
         {
@@ -443,7 +442,6 @@ namespace WebService_BD
             return ds;
         }
 
-
         [WebMethod]
         public DataSet BuscarUltimoMuestreoPreliminar()
         {
@@ -495,7 +493,6 @@ namespace WebService_BD
             da.Fill(ds);
             return ds;
         }
-
 
         [WebMethod]
         public DataSet CrearPuesto(string nombre)
